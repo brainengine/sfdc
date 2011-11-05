@@ -1,0 +1,18 @@
+<apex:page controller="SalesController" showHeader="false">
+<html>
+<body>
+
+    <font style="font-family:arial">
+        <b>Number of Sprockets Sold By Rep</b>
+    </font><br/>
+
+    <c:TimeLine jsondata="{!SalesActivity}" 
+                width="900px" height="300px" 
+                displayZoomButtons="false" 
+                zoomStartTime="new Date(2008, 07, 01)" 
+                zoomEndTime="new Date(2008, 09, 30)" 
+                colors="'#C2CD23'" />
+                
+</body>
+</html>
+</apex:page>

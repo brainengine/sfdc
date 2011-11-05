@@ -1,0 +1,26 @@
+public class BuildManagement{
+    
+    	//here is my comment 8888888lllllllgggggg
+	///
+	public static void processNewBuilds(BE_Builds__c[] builds){
+		
+		for (BE_Builds__c bld:builds){
+			if(bld.Description__c == null){
+				bld.Description__c = 'Build created automatically through integration';
+				System.debug('Description Updated');//
+			}
+		}
+	}
+    //comments rrrrrrrrr bbbb  hhhhhccccccccccccccc dddddddd
+    //YYYYUUUUUUUUUUUUUUUPPPPPPPPPPPP!!!!!!!!!!!!
+	
+	static testMethod void testNewBuilds() {
+		
+		BE_Builds__c b = new BE_Builds__c();
+		
+		//insert new build
+		insert b;
+		
+	}
+
+}

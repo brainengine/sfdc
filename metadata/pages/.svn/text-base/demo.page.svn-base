@@ -1,0 +1,71 @@
+<apex:page standardController="Contact">
+	<!-- sample -->
+        <apex:sectionHeader title="{!$ObjectType.Contact.label}" subtitle="{!Contact.name}"/>
+        <apex:pageBlock title="{!$ObjectType.Contact.label} Detail" >
+                <apex:pageBlockButtons >
+                <apex:form >
+                        <apex:commandButton action="{!edit}" value="Edit"/>
+                        <apex:commandButton action="{!delete}" value="Delete"/>
+                        <apex:commandButton action="{!URLFOR($Action.Contact.Clone,Contact.id)}" value="Clone"/>
+                        <apex:commandButton action="{!URLFOR($Action.Contact.Share,Contact.id)}" value="Sharing"/>
+                        <apex:commandButton action="{!URLFOR($Action.Contact.Submit,Contact.id)}" value="Submit for Approval"/>
+                </apex:form>
+                </apex:pageBlockButtons>
+                <apex:pageBlockSection showHeader="false" columns="2">
+                        <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Contact Owner"/>
+                                <apex:outputPanel >
+                                        <apex:outputField value="{!Contact.OwnerId}"/>&nbsp;
+                                        <apex:outputLink value="{!URLFOR($Action.Contact.ChangeOwner,Contact.id)}">[Change]</apex:outputLink>
+                                </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        <apex:outputField value="{!Contact.Phone}"/>
+                        <apex:outputField value="{!Contact.Name}"/>
+                        <apex:outputField value="{!Contact.HomePhone}"/>
+                        <apex:outputField value="{!Contact.AccountId}"/>
+                        <apex:outputField value="{!Contact.MobilePhone}"/>
+                        <apex:outputField value="{!Contact.Title}"/>
+                        <apex:outputField value="{!Contact.OtherPhone}"/>
+                        <apex:outputField value="{!Contact.Department}"/>
+                        <apex:outputField value="{!Contact.Fax}"/>
+                        <apex:outputField value="{!Contact.Birthdate}"/>
+                        <apex:outputField value="{!Contact.Email}"/>
+                        <apex:outputField value="{!Contact.ReportsToId}"/>
+                        <apex:outputField value="{!Contact.AssistantName}"/>
+                        <apex:outputField value="{!Contact.LeadSource}"/>
+                        <apex:outputField value="{!Contact.AssistantPhone}"/>
+                </apex:pageBlockSection>
+                <apex:pageBlockSection showHeader="false" columns="2">
+                        <apex:outputField value="{!Contact.MailingStreet}"/>
+                        <apex:outputField value="{!Contact.OtherStreet}"/>
+                        <apex:outputField value="{!Contact.MailingCity}"/>
+                        <apex:outputField value="{!Contact.OtherCity}"/>
+                        <apex:outputField value="{!Contact.MailingState}"/>
+                        <apex:outputField value="{!Contact.OtherState}"/>
+                        <apex:outputField value="{!Contact.MailingPostalCode}"/>
+                        <apex:outputField value="{!Contact.OtherPostalCode}"/>
+                        <apex:outputField value="{!Contact.MailingCountry}"/>
+                        <apex:outputField value="{!Contact.OtherCountry}"/>
+                </apex:pageBlockSection>
+                <apex:pageBlockSection showHeader="false" columns="2">
+                        <apex:outputField value="{!Contact.Languages__c}"/>
+                        <apex:outputField value="{!Contact.Level__c}"/>
+                </apex:pageBlockSection>
+                <apex:pageBlockSection showHeader="false" columns="2">
+                        <apex:outputField value="{!Contact.CreatedById}"/>
+                        <apex:outputField value="{!Contact.LastModifiedById}"/>
+                </apex:pageBlockSection>
+                <apex:pageBlockSection showHeader="false" columns="1">
+                        <apex:outputField value="{!Contact.Description}"/>
+                </apex:pageBlockSection>
+                <apex:pageBlockSection showHeader="false" columns="1">
+                </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:relatedList list="Opportunities"/>
+        <apex:relatedList list="Cases"/>
+        <apex:relatedList list="OpenActivities"/>
+        <apex:relatedList list="ActivityHistories"/>
+        <apex:relatedList list="CampaignMembers"/>
+        <apex:relatedList list="NotesAndAttachments"/>
+        <apex:relatedList list="EmailStatuses"/>
+</apex:page>

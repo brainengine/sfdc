@@ -1,0 +1,4 @@
+trigger wwww on Account bulk (before insert,after insert) {
+
+
+}

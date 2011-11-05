@@ -1,0 +1,58 @@
+<apex:component >
+	<apex:attribute name="jsondata" description="This is the chart data" type="string" required="true" />
+   	<apex:attribute name="barformat" description="Apply barformat to this column" type="string" />
+	<apex:attribute name="barwidth" description="Apply barformat to this column" type="integer" default="90"  />
+	<apex:attribute name="decimalformat1" description="Apply decimalformat to this column" type="string" />
+   	<apex:attribute name="decimalformat2" description="Apply decimalformat to this column" type="string" />
+	<apex:attribute name="showRowNumber" description="Show Row Number" type="Boolean" default="true"  />
+		
+	<apex:outputPanel id="chart_div">
+		<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+		<script type="text/javascript">
+    
+ google.load("visualization", "1", {packages: ["table" ]});
+ google.setOnLoadCallback(drawTable); 
+ 
+ function drawTable() {
+  var data = new google.visualization.DataTable( eval( '({!jsondata})' ) );
+ 
+  var barformatter = "{!barformat}";
+ 
+  if ( barformatter != "" ) { // Apply formatter to this column
+  	var formatter = new google.visualization.TableBarFormat({width: {!barwidth}});
+  	formatter.format(data, barformatter); 
+  }
+  
+  var decimalformatter1 = "{!decimalformat1}";
+ 
+  if ( decimalformatter1 != "" ) { // Apply formatter to this column
+	decimalformatter1 = parseInt(decimalformatter1);
+  	var formatter = new google.visualization.TableNumberFormat(
+  		{prefix: '$'});
+  	formatter.format(data, decimalformatter1); 
+  }
+  
+  var decimalformatter2 = "{!decimalformat2}";
+  if ( decimalformatter2 != "" ) { // Apply formatter to this column
+   decimalformatter2 = parseInt(decimalformatter2);
+  	var formatter = new google.visualization.TableNumberFormat(
+  		{prefix: '$'});
+  	formatter.format(data, decimalformatter2); 
+  }	
+  
+  var table = new google.visualization.Table(  
+  	document.getElementById('{!$Component.chart_div}'));
+
+   table.draw(data, {allowHtml: true, showRowNumber: {!showRowNumber}});
+   
+   /*
+   google.visualization.events.addListener(table, 'select', function() {
+    var row = table.getSelection()[0].row;
+   	// alert('You selected ' + data.getValue(row, 0));
+    window.location.href = '/'+data.getValue(row, 0);
+   });*/
+ 
+ }
+</script>
+	</apex:outputPanel>
+</apex:component>

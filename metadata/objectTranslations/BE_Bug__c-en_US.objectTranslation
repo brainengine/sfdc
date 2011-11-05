@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>BrainEngine Bug</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>BrainEngine Bugs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Business Value --></label>
+        <name>Business_Value__c</name>
+        <picklistValues>
+            <masterLabel>Fix ASAP</masterLabel>
+            <translation><!-- Fix ASAP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fix If Time</masterLabel>
+            <translation><!-- Fix If Time --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Developer --></label>
+        <name>Developer_1__c</name>
+        <relationshipLabel><!-- BrainEngine Bugs (Developer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Developer --></label>
+        <name>Developer_2__c</name>
+        <relationshipLabel><!-- BrainEngine Bugs (Developer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Effort --></label>
+        <name>Effort__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name --></label>
+        <name>Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- QA Engineer --></label>
+        <name>QA_Engineer__c</name>
+        <relationshipLabel><!-- BrainEngine Bugs (QA Engineer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Release --></label>
+        <name>Release__c</name>
+        <relationshipLabel><!-- BrainEngine Bugs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Severity --></label>
+        <name>Severity__c</name>
+        <picklistValues>
+            <masterLabel>Blocking</masterLabel>
+            <translation><!-- Blocking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Critical</masterLabel>
+            <translation><!-- Critical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enhancement</masterLabel>
+            <translation><!-- Enhancement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Normal</masterLabel>
+            <translation><!-- Normal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Small</masterLabel>
+            <translation><!-- Small --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>State__c</name>
+        <picklistValues>
+            <masterLabel>Backlog</masterLabel>
+            <translation><!-- Backlog --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Done</masterLabel>
+            <translation><!-- Done --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Testing</masterLabel>
+            <translation><!-- In Testing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Planned</masterLabel>
+            <translation><!-- Planned --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- User Story --></label>
+        <name>User_Story__c</name>
+        <relationshipLabel><!-- BrainEngine Bugs --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

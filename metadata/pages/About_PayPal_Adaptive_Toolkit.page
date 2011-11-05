@@ -1,0 +1,21 @@
+<apex:page >
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>PayPal X Payments Platform API Toolkit!!!!!!!!!!pppppppppp</h1>
+<br/><br/>
+
+
+The PayPal X <font size="4">Payments111</font> Platform provides several Adaptive Payments APIs that enable you to provision payments through applications or services running on the Cloud. Using the PayPal X Payments Apex Toolkit, applications can handle payments, preapprovals for payments, refunds, and even use the Foreign Exchange currency conversion rates from Force.com platform. Please visit <a href="https://www.x.com">X.com</a> for more information about PayPal's Adaptive Payments APIs.
+
+<br/><br/>
+
+PayPal X Payments Platform Toolkit includes support for <a href="https://www.x.com/community/ppx/adaptive_payments">Adaptive Payments</a> and <a href="https://www.x.com/community/ppx/adaptive_accounts">Adaptive Accounts</a> APIs.
+
+<br/><br/>
+Please feel free to explore more in the source code on <a href="http://developer.force.com/codeshare/apex/ProjectPage?id=a06300000064eTCAAY">Code Share project</a>.
+
+<br/><br/>
+PayPal X Developer Network <a href="https://www.x.com">www.x.com<a/>
+
+<br/><br/><br/> Check <a href="https://www.x.com">X.com</a> for more information about various PayPal Adaptive Platform APIs.
+
+</apex:page>

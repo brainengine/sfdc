@@ -1,0 +1,4 @@
+trigger s9 on Account bulk (before insert,after insert,after update) {
+
+
+}

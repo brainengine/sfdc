@@ -1,0 +1,13 @@
+<apex:page controller="SalesController" showheader="false">
+<html>
+<body>
+    <c:ScatterChart jsondata="{!OpportunitiesAmountProbability}" 
+                width="300" height="300" 
+                title="Open Opportunities"
+				enableTooltip="true"
+                legend="none"
+                titleX="Probability"
+                titleY="Amount" />      
+</body>
+</html>
+</apex:page>

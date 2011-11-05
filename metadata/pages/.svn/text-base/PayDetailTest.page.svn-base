@@ -1,0 +1,216 @@
+<apex:page sidebar="false" controller="ControllerPayDetailApi">
+    <table align="center" ><tr>
+        <td style="font-size:18px"> 
+            <table><tr><td style="color:darkblue;">
+                PAY DETAIL TEST 
+            </td></tr></table>
+        </td>
+    </tr></table>
+    
+    <apex:form >
+        <apex:outputpanel style="width:300px;height:400px;" >
+            <div style="text-align:center;border-top:medium;border-top-color:black"> 
+                <apex:outputtext id="ErrMessageID" escape="false" value="{!MainMessage}" style="background-color:yellow;color:red;font-weight:18px;font-size:14px;text-align:center;"/>
+            </div>
+            
+            <apex:pageblock title="Transaction">
+                <apex:pageBlockButtons >
+                    <apex:commandButton action="{!PayDetail}" value="Pay Detail" rerender="ErrMessageID,display,responerr" status="status"/>
+                    <apex:actionstatus id="status" >
+                        <apex:facet name="start" > <apex:outputtext style="color:blue" value=" Loading..."/></apex:facet>
+                        <apex:facet name="stop" > <apex:outputtext style="color:blue" value=" "/></apex:facet>
+                    </apex:actionstatus>
+                </apex:pageBlockButtons>
+                
+                <apex:pageblocksection title="Common Request Parameters"  columns="2"  id="CommonPrmsId">
+                  <apex:pageblocksectionitem >
+   
+                  		<apex:OUTPUTTEXT style="background-color:red;color:red;">Common Parameters Object Name</apex:OUTPUTTEXT>
+                  		<apex:outputPanel >
+                          <apex:outputText style="background-color:red;color:red;" value="I"/>
+                        <apex:inputtext value="{!CommonParametersObjName}"/>
+                        </apex:outputPanel>
+                  </apex:pageblocksectionitem>
+
+                    <apex:pageblocksectionitem >
+
+                        <apex:OUTPUTTEXT style="background-color:red;color:red;">API Credential Object Name:</apex:OUTPUTTEXT>
+                        <apex:outputPanel >
+                          <apex:outputText style="background-color:red;color:red;" value="I"/>
+                        <apex:inputtext value="{!APICredentialObjName}"/>
+                        </apex:outputPanel>
+                    </apex:pageblocksectionitem>
+                        
+                </apex:pageblocksection>  
+                
+                <!-- SECTION -->  
+                <apex:pageblocksection title="Sender Information" columns="4"  id="SenderInfoId">
+                    <apex:pageblocksectionitem >
+
+                        <apex:outputText >PayKey: </apex:outputText>
+                         <apex:outputpanel >
+                            <apex:inputtext value="{!payKey}"></apex:inputtext>
+                         </apex:outputpanel>
+                     </apex:pageblocksectionitem>
+                     
+                     <apex:pageblocksectionitem >
+                        <apex:outputText >Transaction ID: </apex:outputText>
+                        <apex:outputpanel >
+                            <apex:inputtext value="{!transactionId}"></apex:inputtext>
+                        </apex:outputpanel>
+                     </apex:pageblocksectionitem>
+
+
+                     <apex:pageblocksectionitem >
+                        <apex:outputText >Tracking ID:</apex:outputText>
+                        <apex:outputpanel >
+                          
+                           <apex:inputtext value="{!trackingId}"></apex:inputtext>
+                        </apex:outputpanel>
+                     </apex:pageblocksectionitem>
+                    
+                </apex:pageblocksection>
+       
+        <!--SECTION -->     
+                <apex:pageBlockSection title="Response">
+                    <apex:outputPanel id="display" layout="block">
+                        <apex:outputPanel rendered="{!isDisplayResponse}">
+                            <h2>Cancel Url:</h2>
+                            <apex:outputText value="{!paymentDetailResponse.CancelUrl}"/><br/>
+                            
+                            <h2>Currency Code:</h2>
+                            <apex:outputText value="{!paymentDetailResponse.CurrencyCode}"/><br/>
+                            
+                            <h2>IpnNotification Url:</h2>
+                            <apex:outputText value="{!paymentDetailResponse.IpnNotificationUrl}"/><br/>
+                            
+                            <h2>Memo:</h2>
+                            <apex:outputText value="{!paymentDetailResponse.Memo}"/><br/>
+                            
+                            <h2>Return Url:</h2>
+                            <apex:outputText value="{!paymentDetailResponse.ReturnUrl}"/><br/>
+                            
+                            <h2>Sender Email:</h2>
+                            <apex:outputText value="{!paymentDetailResponse.SenderEmail}"/><br/>
+                            
+                             <h2>Status:</h2>
+                            <apex:outputText value="{!paymentDetailResponse.Status}"/><br/>
+                            
+                            <h2>Tracking Id:</h2>
+                            <apex:outputText value="{!paymentDetailResponse.TrackingId}"/><br/>
+                            
+                            <h2>Pay Key:</h2>
+                            <apex:outputText value="{!paymentDetailResponse.PayKey}"/><br/>
+                            
+                            <h2>Action Type:</h2>
+                            <apex:outputText value="{!paymentDetailResponse.ActionType}"/><br/>
+                            
+                            <h2>Fees Payer:</h2>
+                            <apex:outputText value="{!paymentDetailResponse.FeesPayer}"/><br/>
+                            
+                            <h2>Reverse All Parallel Payments On Error:</h2>
+                            <apex:outputText value="{!paymentDetailResponse.ReverseAllParallelPaymentsOnError}"/><br/>
+                            
+                            <h2>Preapproval Key:</h2>
+                            <apex:outputText value="{!paymentDetailResponse.PreapprovalKey}"/><br/>
+                            
+                            <h2>Log Default Shipping Address:</h2>
+                            <apex:outputText value="{!paymentDetailResponse.LogDefaultShippingAddress}"/><br/>
+                            
+                            <h2>Response Envelope</h2><br/>
+                            <h2>Ack:</h2>
+                            <apex:outputText value="{!respEnvp.Ack}"/><br/>
+                            
+                            <h2>Correlation Id:</h2>
+                            <apex:outputText value="{!respEnvp.CorrelationId}"/><br/>
+                            
+                            <h2>Build:</h2>
+                            <apex:outputText value="{!respEnvp.Build}"></apex:outputText><br/>
+
+                            <h2>Timestamp:</h2>
+                            <apex:outputText value="{!respEnvp.StringTimestamp}"/><br/>
+                            
+                            <h2>Funding Type Info:</h2>
+                            <apex:dataList value="{!FundingTypeInfo}" var="fundInfo">
+                               <apex:outputText value="{!fundInfo.FundingType}"/>
+                            </apex:dataList>
+                            
+                           <h2> Payment Info:</h2> <br/> 
+                           <apex:dataTable value="{!outParameterList}" var="test" cellpadding="3" frame="hside">
+                               <apex:column >
+                                  <apex:facet name="header">Email </apex:facet>
+                                   <apex:outputText value="{!test.Email}"></apex:outputText>
+                               </apex:column> 
+                         
+                               <apex:column >
+                                  <apex:facet name="header">Amount </apex:facet>
+                                   <apex:outputText value="{!test.Amt}"></apex:outputText>
+                                </apex:column>
+                                <apex:column >
+                                  <apex:facet name="header">Payment Type </apex:facet>
+                                   <apex:outputText value="{!test.PaymentType}"></apex:outputText>
+                                </apex:column>
+                               <apex:column >
+                                  <apex:facet name="header">Primary </apex:facet>
+                                   <apex:outputText value="{!test.Primary}"></apex:outputText>
+                             </apex:column> 
+                             <apex:column >
+                                  <apex:facet name="header">InvoiceId</apex:facet>
+                                   <apex:outputText value="{!test.InvoicId}"></apex:outputText>
+                             </apex:column> 
+                             <apex:column >
+                                  <apex:facet name="header">Transaction Id</apex:facet>
+                                   <apex:outputText value="{!test.Trans}"></apex:outputText>
+                             </apex:column> 
+                             <apex:column >
+                                  <apex:facet name="header">Transaction Status</apex:facet>
+                                   <apex:outputText value="{!test.TranStatus}"></apex:outputText>
+                             </apex:column> 
+                             <apex:column >
+                                  <apex:facet name="header">SenderTransaction Id</apex:facet>
+                                   <apex:outputText value="{!test.SenderTransactionId}"></apex:outputText>
+                             </apex:column>
+                             <apex:column >
+                                  <apex:facet name="header">SenderTransaction Status</apex:facet>
+                                   <apex:outputText value="{!test.SenderTransactionStatus}"></apex:outputText>
+                             </apex:column>
+                             <apex:column >
+                                  <apex:facet name="header">Refund Amt</apex:facet>
+                                   <apex:outputText value="{!test.RefAmt}"></apex:outputText>
+                               </apex:column>
+                               <apex:column >
+                                  <apex:facet name="header">Pending Refund</apex:facet>
+                                   <apex:outputText value="{!test.PenRef}"></apex:outputText>
+                               </apex:column>
+                            </apex:dataTable>
+                           
+                    
+                        </apex:outputPanel>  
+                    </apex:outputPanel>
+                </apex:pageBlockSection>  
+     <!--Section-->           
+                   
+     <!--Section-->        
+                <apex:pageBlockSection title="Response Envelope on Error">
+                   <apex:outputPanel id="responerr">
+                       <apex:outputPanel rendered="{!isErr}">
+                           <h2>Ack:</h2>
+                       <apex:outputText value="{!respEnvp.Ack}"></apex:outputText><br/>
+                       
+                        <h2>Correlation Id:</h2>
+                       <apex:outputText value="{!respEnvp.CorrelationId}"></apex:outputText><br/>
+                       
+                       <h2>Build:</h2>
+                       <apex:outputText value="{!respEnvp.Build}"></apex:outputText><br/>
+                     
+                       <h2>Timestamp:</h2>
+                       <apex:outputText value="{!respEnvp.StringTimestamp}"></apex:outputText><br/>
+                    </apex:outputPanel>
+                   </apex:outputPanel>
+               </apex:pageBlockSection>       
+                 
+                
+            </apex:pageblock>
+        </apex:outputpanel>
+    </apex:form>
+</apex:page>

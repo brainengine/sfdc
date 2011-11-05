@@ -1,0 +1,4 @@
+trigger s55 on Account bulk (before insert) {
+
+
+}

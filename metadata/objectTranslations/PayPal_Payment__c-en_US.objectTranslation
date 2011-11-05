@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>PayPal Payment</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>PayPal Payments</value>
+    </caseValues>
+    <fields>
+        <label><!-- Amount --></label>
+        <name>Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Currency ISO Code --></label>
+        <name>Currency_ISO_Code__c</name>
+        <picklistValues>
+            <masterLabel>USD</masterLabel>
+            <translation><!-- USD --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Log --></label>
+        <name>Log__c</name>
+    </fields>
+    <fields>
+        <label><!-- Memo --></label>
+        <name>Memo__c</name>
+    </fields>
+    <fields>
+        <label><!-- PayPal Credentials --></label>
+        <name>PayPal_Credentials__c</name>
+        <relationshipLabel><!-- PayPal Payments --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Payment Date --></label>
+        <name>Payment_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Type --></label>
+        <name>Payment_Type__c</name>
+        <picklistValues>
+            <masterLabel>Cash</masterLabel>
+            <translation><!-- Cash --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Check or Money Order</masterLabel>
+            <translation><!-- Check or Money Order --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Credit Card</masterLabel>
+            <translation><!-- Credit Card --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ECheck</masterLabel>
+            <translation><!-- ECheck --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electronic Funds Transfer</masterLabel>
+            <translation><!-- Electronic Funds Transfer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Invoice</masterLabel>
+            <translation><!-- Invoice --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PayPal Account</masterLabel>
+            <translation><!-- PayPal Account --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Refund Amount --></label>
+        <name>Refund_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Refund Date --></label>
+        <name>Refund_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping --></label>
+        <name>Shipping__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Authorized</masterLabel>
+            <translation><!-- Authorized --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Declined</masterLabel>
+            <translation><!-- Declined --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Error</masterLabel>
+            <translation><!-- Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expired</masterLabel>
+            <translation><!-- Expired --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reversed</masterLabel>
+            <translation><!-- Reversed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Scheduled</masterLabel>
+            <translation><!-- Scheduled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Voided</masterLabel>
+            <translation><!-- Voided --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Taxes --></label>
+        <name>Taxes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transaction Id --></label>
+        <name>Transaction_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transaction Type --></label>
+        <name>Transaction_Type__c</name>
+        <picklistValues>
+            <masterLabel>Authorization</masterLabel>
+            <translation><!-- Authorization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payment</masterLabel>
+            <translation><!-- Payment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Refund</masterLabel>
+            <translation><!-- Refund --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>PayPal Payment Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- PayPal Management --></label>
+            <section>PayPal Management</section>
+        </sections>
+        <sections>
+            <label><!-- Refuund Information --></label>
+            <section>Refuund Information</section>
+        </sections>
+        <sections>
+            <label><!-- Taxes &amp; Shipping Fees --></label>
+            <section>Taxes &amp; Shipping Fees</section>
+        </sections>
+        <sections>
+            <label><!-- Transaction Log --></label>
+            <section>Transaction Log</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

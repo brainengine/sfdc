@@ -1,0 +1,32 @@
+<apex:page controller="MedalliaManagement">
+	<apex:form >
+		<apex:pageBlock title="Medallia API Demo Page">
+			<b>Medallia Request Message</b><p/>
+			<table style="width: 75%">
+				<tr>
+					<td style="width: 100px">Request:</td>
+					<td><apex:inputText value="{!url}" size="100"/></td>
+				</tr>
+			</table>
+			<p/>
+			<p/>
+			<!--<apex:commandButton action="{!ParseSQL}" value="Submit Request" status="counterStatus" rerender="counter"/>&nbsp;&nbsp;&nbsp;
+			<apex:commandButton action="{!Connect}" value="Get Record Count" status="counterStatus" rerender="counter"/>&nbsp;&nbsp;&nbsp;-->
+			<apex:commandButton action="{!GetIOValues}" value="Get IO Values" status="counterStatus" rerender="counter"/>&nbsp;&nbsp;&nbsp;
+			<apex:commandButton action="{!GetIOValues2}" value="Get IO Values2" status="counterStatus" rerender="counter"/>&nbsp;&nbsp;&nbsp;
+			<apex:commandButton action="{!GetAggregateValue}" value="Get IO Values2" status="counterStatus" rerender="counter"/>&nbsp;&nbsp;&nbsp;
+			<p/>
+			<apex:outputpanel id="counter">
+				<apex:outputText value="{!response}"/>
+				<!--<apex:actionSupport event="onclick" 
+				action="{!incrementCounter}" 
+				rerender="counter" status="counterStatus"/>-->
+			</apex:outputpanel>
+			<apex:actionStatus id="counterStatus" 
+				startText=" (submitting request...)" 
+			stopText=" "/>
+			<p/><p/>
+
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

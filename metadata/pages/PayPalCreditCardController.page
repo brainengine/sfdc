@@ -1,0 +1,7 @@
+<apex:page >
+<!-- Begin Default Content REMOVE THIS -->
+<h1>Congratulations</h1>
+This is your new Apex Page: PayPalCreditCardController
+<!-- End Default Content REMOVE THIS -->
+<b>Hello World!</b>
+</apex:page>

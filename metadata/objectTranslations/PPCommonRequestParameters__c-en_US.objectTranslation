@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>PayPal Common Request Parameters</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>PayPal Common Request Parameters</value>
+    </caseValues>
+    <fields>
+        <help><!-- Your Application&apos;s Identification, such as the name of your application. --></help>
+        <label><!-- ApplicationName --></label>
+        <name>ApplicationName__c</name>
+    </fields>
+    <fields>
+        <help><!-- The currency code --></help>
+        <label><!-- CurrencyCode --></label>
+        <name>CurrencyCode__c</name>
+        <picklistValues>
+            <masterLabel>AUD</masterLabel>
+            <translation><!-- AUD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CAD</masterLabel>
+            <translation><!-- CAD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CHF</masterLabel>
+            <translation><!-- CHF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CZK</masterLabel>
+            <translation><!-- CZK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DKK</masterLabel>
+            <translation><!-- DKK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EUR</masterLabel>
+            <translation><!-- EUR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GBP</masterLabel>
+            <translation><!-- GBP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HKD</masterLabel>
+            <translation><!-- HKD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HUF</masterLabel>
+            <translation><!-- HUF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ILS</masterLabel>
+            <translation><!-- ILS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JPY</masterLabel>
+            <translation><!-- JPY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MXN</masterLabel>
+            <translation><!-- MXN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NOK</masterLabel>
+            <translation><!-- NOK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NZD</masterLabel>
+            <translation><!-- NZD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PHP</masterLabel>
+            <translation><!-- PHP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PLN</masterLabel>
+            <translation><!-- PLN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SEK</masterLabel>
+            <translation><!-- SEK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SGD</masterLabel>
+            <translation><!-- SGD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>THB</masterLabel>
+            <translation><!-- THB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TWD</masterLabel>
+            <translation><!-- TWD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>USD</masterLabel>
+            <translation><!-- USD --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The level of detail required by the client application for component such as Item, Transaction. --></help>
+        <label><!-- DetailLevel --></label>
+        <name>DetailLevel__c</name>
+        <picklistValues>
+            <masterLabel>ReturnAll</masterLabel>
+            <translation><!-- ReturnAll --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The payer of PayPal fees --></help>
+        <label><!-- FeePayer --></label>
+        <name>FeePayer__c</name>
+        <picklistValues>
+            <masterLabel>EACHRECEIVER</masterLabel>
+            <translation><!-- EACHRECEIVER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PRIMARYRECEIVER</masterLabel>
+            <translation><!-- PRIMARYRECEIVER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SECONDARYONLY</masterLabel>
+            <translation><!-- SECONDARYONLY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SENDER</masterLabel>
+            <translation><!-- SENDER --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Language --></label>
+        <name>Language__c</name>
+        <picklistValues>
+            <masterLabel>en_US</masterLabel>
+            <translation><!-- en_US --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>PPRequestParameters Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

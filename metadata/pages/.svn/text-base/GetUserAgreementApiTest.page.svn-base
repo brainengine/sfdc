@@ -1,0 +1,191 @@
+<apex:page sidebar="false" controller="ControllerGetUserAgreementApi">
+    <table align="center" ><tr>
+        <td style="background-color:Blue;color:white;font-size:18px"> 
+            <table><tr><td style="background-color:white;color:blue;">
+                GET USER AGREEMENT TEST 
+            </td></tr></table>
+        </td>
+    </tr></table>
+    
+    <apex:form >
+        <apex:outputpanel style="width:300px;height:400px;" >
+            <div style="text-align:center;border-top:medium;border-top-color:black"> 
+                <apex:outputtext id="ErrMessageID" escape="false" value="{!MainMessage}" style="background-color:yellow;color:red;font-weight:18px;font-size:14px;text-align:center;"/>
+            </div>
+            
+            <apex:pageblock title="Transaction">
+                <apex:pageBlockButtons >
+                    <apex:commandButton action="{!apply}" value="Apply" rerender="ErrMessageID,display,display1" status="status"/>
+                    <apex:actionstatus id="status" >
+                        <apex:facet name="start" > <apex:outputtext style="color:blue" value=" Loading..."/></apex:facet>
+                        <apex:facet name="stop" > <apex:outputtext style="color:blue" value=" "/></apex:facet>
+                    </apex:actionstatus>
+                </apex:pageBlockButtons>
+                <!-- PAGEBLOCKSECTION --->
+                <apex:pageBlockSection title="API Details" columns="2">
+                       <apex:pageblocksectionitem >
+                      
+                        <apex:outputText value="User Name"/>
+                        <apex:outputPanel >
+                        <apex:outputText style="background-color:red;color:red;" value="I"/>
+                         <apex:inputtext value="{!userid}" />
+                         </apex:outputPanel>
+
+                        </apex:pageblocksectionitem>
+                         <apex:pageblocksectionitem >
+                        <apex:outputText value="Password" style="password"/>
+                        <apex:outputPanel >
+                        <apex:outputText style="background-color:red;color:red;" value="I"/>
+                        <apex:inputtext value="{!password}" />
+
+                        </apex:outputPanel>
+                        </apex:pageblocksectionitem>
+                        
+                     <apex:pageblocksectionitem >
+                         
+                            <apex:outputText value="Certificate file name"/>
+                            <apex:outputPanel >
+                        
+                            <apex:inputText value="{!certificate}" />
+                            </apex:outputPanel>
+
+                       </apex:pageblocksectionitem>
+                      
+                        
+                        <apex:pageblocksectionitem >
+                        <apex:outputText value="Certificate Password" style="password"/>
+                                                <apex:outputPanel >
+
+                        
+                        <apex:inputtext value="{!certificatepassword}" />
+                                                </apex:outputPanel>
+
+                        </apex:pageblocksectionitem>
+                        
+                        <apex:pageblocksectionitem >
+                        <apex:outputText value="Signature"/>
+                                                <apex:outputPanel >
+                        <apex:inputtext value="{!Signature}" />
+                                                </apex:outputPanel>
+
+                        </apex:pageblocksectionitem>
+                        
+                        <apex:pageblocksectionitem >
+                            <apex:outputText value="Authentication"/>
+                            <apex:selectList value="{!AuthenticationMethod}" size="1">
+                                <apex:selectOptions value="{!SelectAuthentication}">
+                                </apex:selectOptions>
+                            </apex:selectList>
+                        </apex:pageblocksectionitem>
+                        
+                        
+                        <apex:pageblocksectionitem >
+                            <apex:outputText value="Environment"/>
+                            <apex:selectList value="{!Environment}" size="1">
+                                <apex:selectOptions value="{!SelectEnvironment}">
+                                </apex:selectOptions>
+                            </apex:selectList>
+                        </apex:pageblocksectionitem>
+                        
+                        <apex:pageblocksectionitem >
+                            <apex:outputText value="Application ID:"/>
+                            <apex:outputPanel >
+                                <apex:outputText style="background-color:red;color:red;" value="I"/>
+                                <apex:inputText value="{!ApplicationId}" /> 
+                            </apex:outputPanel>
+                       </apex:pageblocksectionitem>
+                       
+                        <apex:pageblocksectionitem >
+                            <apex:outputText value="Device ID:"/><apex:outputPanel >
+                            <apex:inputText value="{!DeviceId}" /> </apex:outputPanel>
+                       </apex:pageblocksectionitem>
+                       
+                       <apex:pageblocksectionitem >
+                            <apex:outputText value="Device IP Address:"/><apex:outputPanel >
+                            <apex:inputText value="{!DeviceIpAddress}" /> </apex:outputPanel>
+                       </apex:pageblocksectionitem>
+                       
+                       <apex:pageblocksectionitem >
+                            <apex:outputText value="Subject:"/><apex:outputPanel >
+                            <apex:inputText value="{!Subject}" /> </apex:outputPanel>
+                       </apex:pageblocksectionitem>
+                       
+                 </apex:pageBlockSection>
+                        
+                
+                <!--SECTION-->
+                 <apex:pageBlockSection title="Get User Agreement Request">
+                     <apex:pageblockSectionItem >
+                         <apex:outputText > Country Code</apex:outputText>
+                         <apex:inputText value="{!GetUserAgreementRequest.CountryCode}"/>   
+                     </apex:pageblockSectionItem>
+                     <apex:pageblockSectionItem >
+                         <apex:outputText > Language Code</apex:outputText>
+                         <apex:inputText value="{!GetUserAgreementRequest.LanguageCode}"/>   
+                     </apex:pageblockSectionItem>
+                     <apex:pageblockSectionItem >
+                         <apex:outputText > Create Account Key</apex:outputText>
+                         <apex:inputText value="{!GetUserAgreementRequest.CreateAccountKey}"/>   
+                     </apex:pageblockSectionItem>
+                 </apex:pageBlockSection>   
+                <!--SecTION-->
+                <apex:pageBlockSection title="Request Envelope">
+                    <apex:pageblocksectionitem >
+                        <apex:outputText >Language: </apex:outputText>
+                        <apex:outputPanel >
+                            <apex:outputText style="background-color:red;color:red;" value="I"/>
+                            <apex:inputtext value="{!ErrorLanguage}" />
+                        </apex:outputPanel>
+                    </apex:pageblocksectionitem>
+                    
+                    <apex:pageblocksectionitem >
+                        <apex:outputText >Detail Level: </apex:outputText>
+                        <apex:outputPanel >
+                            
+                            <apex:inputtext value="{!DetailLevel}" />
+                        </apex:outputPanel>
+                    </apex:pageblocksectionitem>
+                    
+                </apex:pageBlockSection>
+                
+             <!--SECTION-->  
+             
+               <apex:pageBlockSection title="Response ">
+                    <apex:outputPanel id="display">
+                        <apex:outputPanel rendered="{!isDisplay}">
+                            <h2>Ack:</h2>
+                            <apex:outputText value="{!respEnvp.Ack}"/><br/>
+                            <h2>Build:</h2>
+                            <apex:outputText value="{!respEnvp.Build}"/><br/>
+                            <h2>correlationId:</h2>
+                            <apex:outputText value="{!respEnvp.CorrelationId}"/><br/>
+                            <h2>Timestamp:</h2>
+                            <apex:outputText value="{!respEnvp.StringTimestamp}"/><br/>
+                            <h2>Agreement:</h2>
+                            <apex:outputText value="{!GetUserAgreementResponse.Agreement}"/>
+                        </apex:outputPanel>
+                    </apex:outputPanel>
+                </apex:pageBlockSection>
+          
+           <!--SECTION-->
+              <apex:pageBlockSection title="Response Enevelope On Error">
+                    <apex:outputPanel id="display1">
+                        <apex:outputPanel rendered="{!isErr}">
+                            <h2>Ack:</h2>
+                            <apex:outputText value="{!respEnvp.Ack}"/><br/>
+                            <h2>Build:</h2>
+                            <apex:outputText value="{!respEnvp.Build}"/><br/>
+                            <h2>correlationId:</h2>
+                            <apex:outputText value="{!respEnvp.CorrelationId}"/><br/>
+                            <h2>Timestamp:</h2>
+                            <apex:outputText value="{!respEnvp.StringTimestamp}"/><br/>
+                        </apex:outputPanel>
+                    </apex:outputPanel>
+                </apex:pageBlockSection>  
+
+
+
+            </apex:pageblock>
+        </apex:outputpanel>
+    </apex:form>
+</apex:page>

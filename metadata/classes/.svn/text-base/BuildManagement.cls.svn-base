@@ -1,0 +1,22 @@
+public class BuildManagement{
+	///
+	public static void processNewBuilds(BE_Builds__c[] builds){
+		
+		for (BE_Builds__c bld:builds){
+			if(bld.Description__c == null){
+				bld.Description__c = 'Build created automatically through integration';
+				System.debug('Description Updated');
+			}
+		}
+	}
+	
+	static testMethod void testNewBuilds() {
+		
+		BE_Builds__c b = new BE_Builds__c();
+		
+		//insert new build
+		insert b;
+		
+	}
+
+}

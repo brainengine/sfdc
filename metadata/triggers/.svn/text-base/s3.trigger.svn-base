@@ -1,0 +1,4 @@
+trigger s3 on Account bulk (before insert,after insert) {
+
+
+}

@@ -1,0 +1,24 @@
+<apex:page standardStylesheets="false" showHeader="false" sidebar="false" controller="StoreFront" >
+	<h1>Store Front</h1>
+	 <apex:stylesheet value="{!URLFOR($Resource.styles, 'styles.css')}"/>
+	<c:SiteHeader id="siteHeader"/>
+	<apex:form >
+		
+		<apex:dataTable value="{!products}" var="pitem" rowClasses="odd,even">
+			<apex:column headerValue="Product">
+				<apex:outputText value="{!pitem.merchandise.name}"/>
+			</apex:column>         
+			<apex:column headerValue="Price">
+				<apex:outputText value="{!pitem.merchandise.Price__c}"/>
+			</apex:column>
+			<apex:column headerValue="#Items">
+				<apex:inputText value="{!pitem.count}"/>
+			</apex:column>
+		</apex:dataTable>
+		<br />
+		<!--<apex:commandButton action="{!shop}" reRender="msg" value="Buy" /> -->
+		<apex:commandButton action="{!shop}" value="Buy" />
+	</apex:form>
+	<apex:outputPanel id="msg">{!message}</apex:outputPanel>
+	<apex:outputLink value="{!$Site.Prefix}/StoreFront" rendered="{!NOT(ISPICKVAL($User.UserType,'Guest'))}">Buy Merchandise</apex:outputLink>
+</apex:page>

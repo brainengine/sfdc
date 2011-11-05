@@ -1,0 +1,33 @@
+<apex:page standardStylesheets="false" showHeader="false" sidebar="false" standardController="Merchandise__c" recordSetVar="products">
+	<apex:stylesheet value="{!URLFOR($Resource.styles, 'styles.css')}" />
+	<apex:form >
+<!-- Begin Default Content REMOVE THIS -->
+<h1>Congratulations</h1>
+This is your new Apex Page: CountSheet
+<!-- End Default Content REMOVE THIS -->
+<b>Hello World!</b>
+		<h1>Merchandise Catalog</h1>
+ 
+		<apex:dataTable value="{!products}" var="pitem" rowClasses="odd,even">
+			<apex:column headerValue="Product">
+				<apex:outputText value="{!pitem.name}"/>
+			</apex:column>
+			<!--<apex:column headerValue="Description">
+				<apex:outputField value="{!pitem.Description__c}"/>
+			</apex:column>  
+			<apex:column headerValue="Price">
+				<apex:outputField value="{!pitem.Price__c}"/>
+			</apex:column>    -->
+			
+			<apex:column headerValue="Inventory">
+				<apex:outputField value="{!pitem.Inventory__c}"/>
+			</apex:column>
+			<apex:column headerValue="Physical Count">
+				<apex:inputField value="{!pitem.Inventory__c}"/>
+			</apex:column> 
+			                        
+		</apex:dataTable>
+		<br/>
+		<apex:commandButton action="{!quicksave}"  value="Update Counts" />
+	</apex:form>
+</apex:page>

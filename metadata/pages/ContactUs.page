@@ -1,0 +1,68 @@
+<apex:page showHeader="false" sidebar="false" contentType="text/html">
+<html>
+<!-- This page demonstrates how to consume a Google Visualization Data Source. -->
+<head>
+    <title>California Department of Motor Vehicles - Contact Us</title>
+    <style type="text/css"> 
+        body { font: 90% Verdana, Helvetica, Arial, sans-serif; background: White; color: Black;} 
+        h3 { color:red }
+        .float { float:left; padding-left:10px; } 
+    </style>
+
+    <!-- Import the GViz API -->
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    
+    <!-- Load the columnchart GViz package. -->
+    <script type="text/javascript">
+    	google.load("visualization", "1.1", {packages: ["columnchart"]});
+    </script>
+
+	<!-- Visualize the Data Source's data. -->
+    <script type="text/javascript"> 
+		// Specify the GViz Data Source endpoint:    
+        var query = new google.visualization.Query(
+        'http://gvizdatasource-developer-edition.na7.force.com/demo/CallVolume'); // You'll need to replace this url with your own data source url.
+              
+        // Specify the query that we want to run:      
+        // Notice that you can only query for records in the Custom Object that is exposed by your endpoint.
+           query.setQuery('SELECT Hour__c, Number_of_Calls__c ORDER BY Hour__c');
+        
+        // An alternative query with a WHERE clause:
+        // query.setQuery('SELECT Hour__c, Number_of_Calls__c WHERE Date__c = TODAY ORDER BY Hour__c');
+	  
+		// Execute the query with a callback function:
+        query.send(drawColumnChart);
+	
+        function drawColumnChart(response) {
+            var data = response.getDataTable();
+		
+            var chart = new google.visualization.ColumnChart( document.getElementById('chart_div') );
+            chart.draw(data, 
+                       {width: 400, 
+                        height: 250, 
+                        legend: 'none', 
+                        title: 'Today\'s Call Volume', 
+                        is3D : false,
+                        borderColor : 'black',
+                        focusBorderColor : 'white',
+                        colors : ['#032F8B']
+                       });   		        	   
+        }
+	</script>
+</head>
+<body>
+    <img src="{!$Resource.DMV_Header}"/><br/>
+    <img src="{!$Resource.DMV_Sidebar}" style="float:left"/>
+	
+    <div class="float">
+        <h3>Contact DMV</h3>                   
+        <b>Telephone:</b> 1-800-777-0133<br/>
+        <b>TTY:</b> 1-800-368-4327<br/><br/>
+        Call Center business hours are: Monday through Friday 8 am to 5 pm, Pacific time.
+        <br/><br/><br/>
+		
+        <div id="chart_div"></div>
+    </div>
+</body>
+</html>
+</apex:page>

@@ -1,0 +1,14 @@
+<apex:page controller="SalesController" showheader="false">
+<html>
+<body>
+    <c:LineChart jsondata="{!SalesByYear}" 
+                width="900" height="300" 
+                title="Sales by Year"
+				enableTooltip="true"
+                legend="none"
+                showCategories="true"
+                titleX="Year"
+                titleY="Sales" />      
+</body>
+</html>
+</apex:page>

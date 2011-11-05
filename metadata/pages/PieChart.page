@@ -1,0 +1,10 @@
+<apex:page controller="SalesController" showHeader="false">
+<html>
+<body>
+    <c:PieChart jsondata="{!OpportunitiesByBillingCountry}"
+                title="Opportunities By Billing Country" />
+
+	<!-- {!OpportunitiesByBillingCountry} -->     
+</body>
+</html>
+</apex:page>

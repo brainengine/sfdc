@@ -1,0 +1,4 @@
+trigger s12 on Account bulk (before insert,after delete) {
+
+
+}

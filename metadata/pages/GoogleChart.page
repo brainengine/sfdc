@@ -1,0 +1,21 @@
+<apex:page controller="GoogleDataEncoding">
+	<apex:form >
+		<apex:pageBlock title="Medallia Chart Test Page">
+			<apex:outputLabel value="Enter data set, seperated by commas: " 
+			for="dataInput"/><br/>
+			<apex:inputTextArea id="dataInput" title="First Data Point" 
+			value="{!dataSet}" rows="3" cols="50"/><br/>
+			<apex:selectRadio value="{!graph}" 
+				layout="pageDirection">
+				<apex:selectOption itemValue="barChart" 
+				itemLabel="Horizontal Bar Chart"/>
+				<apex:selectOption itemValue="lineChart" 
+				itemLabel="Line Chart"/>
+			</apex:selectRadio>            
+			<apex:commandButton action="{!createChart}" 
+			value="Create"/>
+		</apex:pageBlock>
+	</apex:form>
+	<apex:image url="{!chartURL}" alt="Sample chart" 
+	rendered="{!displayChart}"/>
+</apex:page>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Bug</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Bugs</value>
+    </caseValues>
+    <fields>
+        <label><!-- CFTS Release --></label>
+        <name>Classifcation__c</name>
+        <picklistValues>
+            <masterLabel>S59</masterLabel>
+            <translation><!-- S59 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S60</masterLabel>
+            <translation><!-- S60 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S61</masterLabel>
+            <translation><!-- S61 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S62</masterLabel>
+            <translation><!-- S62 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Bugs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>SFDC_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Developer Assigned --></label>
+        <name>SFDC_Developer_Assigned__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated Effort (Man-days) --></label>
+        <name>SFDC_Estimated_Effort_Man_days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated Fix Date --></label>
+        <name>SFDC_Estimated_Fix_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- OS --></label>
+        <name>SFDC_OS__c</name>
+        <picklistValues>
+            <masterLabel>Linux 32 Bit</masterLabel>
+            <translation><!-- Linux 32 Bit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Linux 64 Bit</masterLabel>
+            <translation><!-- Linux 64 Bit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sun OS</masterLabel>
+            <translation><!-- Sun OS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Windows 2000</masterLabel>
+            <translation><!-- Windows 2000 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Windows 98</masterLabel>
+            <translation><!-- Windows 98 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Windows ME</masterLabel>
+            <translation><!-- Windows ME --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Windows XP</masterLabel>
+            <translation><!-- Windows XP --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Priority --></label>
+        <name>SFDC_Priority__c</name>
+        <picklistValues>
+            <masterLabel>0 - Low</masterLabel>
+            <translation><!-- 0 - Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1 - Medium</masterLabel>
+            <translation><!-- 1 - Medium --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 - High</masterLabel>
+            <translation><!-- 2 - High --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Release --></label>
+        <name>SFDC_Release__c</name>
+        <relationshipLabel><!-- Bugs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>SFDC_Status__c</name>
+        <picklistValues>
+            <masterLabel>Deferred</masterLabel>
+            <translation><!-- Deferred --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Process</masterLabel>
+            <translation><!-- In Process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Resolved</masterLabel>
+            <translation><!-- Resolved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Testing</masterLabel>
+            <translation><!-- Testing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Will Not Fix</masterLabel>
+            <translation><!-- Will Not Fix --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Target Release --></label>
+        <name>SFDC_Target_Release__c</name>
+    </fields>
+    <fields>
+        <label><!-- Title --></label>
+        <name>SFDC_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>SFDC_Type__c</name>
+        <picklistValues>
+            <masterLabel>Bug</masterLabel>
+            <translation><!-- Bug --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enhancement</masterLabel>
+            <translation><!-- Enhancement --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Version --></label>
+        <name>SFDC_Version__c</name>
+    </fields>
+    <layouts>
+        <layout>Bug Layout</layout>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- Fix --></label>
+            <section>Fix</section>
+        </sections>
+        <sections>
+            <label><!-- OS --></label>
+            <section>OS</section>
+        </sections>
+        <sections>
+            <label><!-- Title --></label>
+            <section>Title</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

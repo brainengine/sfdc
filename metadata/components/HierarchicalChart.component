@@ -1,0 +1,38 @@
+<apex:component >
+	<!-- This component is uses Google's "Organizational Chart" Visualization: http://code.google.com/apis/visualization/documentation/gallery/orgchart.html -->
+
+	<apex:attribute name="jsondata" description="This is the chart data" type="string" required="true" />
+	<!-- The initialSelection attribute must be an array of JSON objects that contain a row property. They should take this form: '[{row:0}]', and must be eval'd.
+	     More information can be found here: http://code.google.com/apis/visualization/documentation/events.html -->
+	<apex:attribute name="initialSelection" description="This is the selected record." type="string" required="false" />
+    <apex:attribute name="color" type="string" default="#edf7ff" description="Background color of the Node Elements"/>        
+    <apex:attribute name="selectionColor" type="string" default="#d6e9f8" description="Color when Node Element is selected"/>       
+    <apex:attribute name="size" type="string" description="small / medium / large" default="medium"/>      
+    <apex:attribute name="allowHtml" type="string" description="Render Node Values as HTML" default="false"/>       
+    <apex:attribute name="allowCollapse" type="string" description="Determines if double click will collapse a node." default="false"/>  
+    
+    <apex:outputPanel id="hierarchy_div">
+        <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+             google.load("visualization", "1", {packages: ["orgchart"]});
+             google.setOnLoadCallback(drawVisualization); 
+             
+             function drawVisualization() {
+                var data = new google.visualization.DataTable( eval( '({!jsondata})' ) );
+                var hierarchy = 
+                    new google.visualization.OrgChart(document.getElementById('{!$Component.hierarchy_div}'));
+                hierarchy.draw(data, {color: '{!color}', selectionColor: '{!selectionColor}',
+			  					  	  size: '{!size}', allowHtml: {!allowHTML},
+			  					  	  allowCollapse: {!allowCollapse}
+			  					  	 }
+			  				   );
+				
+				var initialSelection = '{!initialSelection}';
+				if(initialSelection != null && initialSelection.length > 0){
+	                hierarchy.setSelection(eval( '(' + initialSelection + ')' ) );
+	            }
+             }
+             setTimeout("drawVisualization();",200);
+        </script>       
+    </apex:outputPanel>
+</apex:component>

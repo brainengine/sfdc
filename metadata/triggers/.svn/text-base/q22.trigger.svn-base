@@ -1,0 +1,4 @@
+trigger q22 on Account bulk (after insert) {
+
+
+}

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>ERD</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>ERDs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Lookup --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- ERDs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Master --></label>
+        <name>BrainEngine_Artifact__c</name>
+        <relationshipLabel><!-- ERDs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- BrainEngine BugA --></label>
+        <name>BrainEngine_BugA__c</name>
+        <relationshipLabel><!-- ERDs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Checkbox1 --></label>
+        <name>Checkbox1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Currency --></label>
+        <name>Currency__c</name>
+    </fields>
+    <fields>
+        <label><!-- DateTime --></label>
+        <name>DateTime__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date --></label>
+        <name>Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- LookupContactC --></help>
+        <label><!-- LookupContact --></label>
+        <name>LookupContact__c</name>
+        <relationshipLabel><!-- LookupContactA Label --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Number --></label>
+        <name>Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Percent --></label>
+        <name>Percent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone --></label>
+        <name>Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Picklist2 --></label>
+        <name>Picklist2__c</name>
+        <picklistValues>
+            <masterLabel>a</masterLabel>
+            <translation><!-- a --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>b</masterLabel>
+            <translation><!-- b --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>c</masterLabel>
+            <translation><!-- c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>d</masterLabel>
+            <translation><!-- d --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>e</masterLabel>
+            <translation><!-- e --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>f</masterLabel>
+            <translation><!-- f --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Picklist --></label>
+        <name>Picklist__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- tttttttttttttttttttttttttttt --></help>
+        <label><!-- Text Change4 --></label>
+        <name>TextChange4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Text Area (Long) --></label>
+        <name>Text_Area_Long__c</name>
+    </fields>
+    <fields>
+        <label><!-- Text Area (Rich) --></label>
+        <name>Text_Area_Rich__c</name>
+    </fields>
+    <fields>
+        <label><!-- Text Area --></label>
+        <name>Text_Area__c</name>
+    </fields>
+    <fields>
+        <label><!-- URL --></label>
+        <name>URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- auto --></label>
+        <name>auto__c</name>
+    </fields>
+    <fields>
+        <help><!-- t --></help>
+        <label><!-- demo --></label>
+        <name>demo__c</name>
+    </fields>
+    <fields>
+        <help><!-- enter the email here --></help>
+        <label><!-- email --></label>
+        <name>email__c</name>
+    </fields>
+    <fields>
+        <label><!-- formula --></label>
+        <name>formula__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>23.0</apiVersion>
+    <description>t1111</description>
+    <label>t1</label>
+    <packageVersions>
+        <majorNumber>1</majorNumber>
+        <minorNumber>23</minorNumber>
+        <namespace>EasyPage</namespace>
+    </packageVersions>
+    <packageVersions>
+        <majorNumber>1</majorNumber>
+        <minorNumber>1</minorNumber>
+        <namespace>eCatalog</namespace>
+    </packageVersions>
+</ApexPage>
