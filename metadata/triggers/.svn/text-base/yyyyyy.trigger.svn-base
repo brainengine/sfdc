@@ -1,4 +1,0 @@
-trigger yyyyyy on Account bulk (before insert,after insert) {
-
-
-}

@@ -1,4 +1,0 @@
-trigger s10 on Account bulk (before insert,before update) {
-
-
-}

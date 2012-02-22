@@ -1,4 +1,0 @@
-<apex:component id="footerComponent">
-<!-- XXX -->
-  <c:SitePoweredBy />
-</apex:component>

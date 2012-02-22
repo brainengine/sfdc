@@ -1,2 +1,0 @@
-<apex:page controller="CallVolumeDataSourceController" 
-           showHeader="false" contentType="text/html">{!Response}</apex:page>

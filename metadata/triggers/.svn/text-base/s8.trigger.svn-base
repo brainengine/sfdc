@@ -1,4 +1,0 @@
-trigger s8 on Account bulk (before insert,after insert) {
-
-
-}

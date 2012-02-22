@@ -1,4 +1,0 @@
-trigger ssss on Account bulk (before insert,after insert) {
-
-
-}
