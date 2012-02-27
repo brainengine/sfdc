@@ -1,0 +1,8 @@
+<apex:page standardController="Contact" extensions="ContactHierarchyController" showHeader="false">
+<html>
+<body>
+	<c:HierarchicalChart jsondata="{!ReportingHierarchy}" initialSelection="{!SelectedContact}"
+       					 size="medium" color="#edf7ff" selectionColor="#d6e9f8" />
+</body>
+</html>
+</apex:page>

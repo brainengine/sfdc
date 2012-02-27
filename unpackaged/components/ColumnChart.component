@@ -1,0 +1,43 @@
+<apex:component >
+  <apex:attribute name="jsondata" description="This is the chart data" type="string" required="true" />
+  <apex:attribute name="title" description="This is the chart title" type="string" required="true" />
+  <apex:attribute name="height" description="This is the chart height" type="string" default="250" />
+  <apex:attribute name="width" description="This is the chart width" type="string" default="400" />
+  <apex:attribute name="legend" description="This is the legend location" type="string" default="right" />
+  <apex:attribute name="colors" description="This is the list of colors for the columns."  type="string[]"/>
+  <apex:attribute name="borderColor" description="This is the color of the border around chart elements." type="string" default="white" />
+  <apex:attribute name="focusBorderColor" description="This is the color of the border around chart elements that are in focus." type="string" default="gray" />
+  <apex:attribute name="is3D" description="This deteremines whether or not the chart is 3D."  type="boolean" default="false"/>
+  <!-- sample llllselectListenerBody attribute: selectListenerBody="window.location.href = '/apex/DrilldownPage';"  -->
+  <apex:attribute name="selectListenerBody" description="The JavaScript function definition that will be executed when a Select event occurs. (Do not use the double-quote character in the body.)" type="string" default=""/>
+  
+  <apex:outputPanel id="chart_div" layout="block" style="width:{!width}px;height={!height}px" >
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+       google.load("visualization", "1.1", {packages: ["columnchart"]});
+       google.setOnLoadCallback(drawLineChart); 
+       var data = new Object();
+       function drawLineChart() {
+          data = new google.visualization.DataTable( eval( '({!jsondata})' ) );
+      
+        var chart = new google.visualization.ColumnChart( document.getElementById('{!$Component.chart_div}') );
+          chart.draw(data, 
+                 {width: {!width}, 
+                  height: {!height}, 
+                legend: '{!legend}', 
+                  title: '{!title}', 
+                  is3D : {!is3D},
+                  colors : [{!colors}],
+                  borderColor : '{!borderColor}',
+                  focusBorderColor : '{!focusBorderColor}'
+                   });   
+
+          var listenerBody = "{!selectListenerBody}";
+        if(listenerBody != ''){
+          var selectListener = new Function("e", listenerBody);
+             google.visualization.events.addListener(chart, 'select', selectListener);
+              }                   
+       }
+    </script>
+  </apex:outputPanel>
+</apex:component>

@@ -1,0 +1,194 @@
+<apex:page sidebar="false" controller="ControllerPayApi">
+    <table align="center" ><tr>
+        <td style="font-size:18px"> 
+            <table><tr><td style="color:darkblue;">
+                PAY API TEST 
+            </td></tr></table>
+        </td>
+    </tr></table>
+    
+    <apex:form >
+        <apex:outputpanel style="width:300px;height:400px;" >
+            <div style="text-align:center;border-top:medium;border-top-color:black"> 
+                <apex:outputtext id="ErrMessageID" escape="false" value="{!MainMessage}" style="background-color:yellow;color:red;font-weight:18px;font-size:14px;text-align:center;"/>
+            </div>
+            
+            <apex:pageblock title="Transaction">
+                <apex:pageBlockButtons >
+                    <apex:commandButton action="{!Pay}" value="Pay" rerender="ErrMessageID,SuccMessageID,display" status="status"/>
+                    <apex:actionstatus id="status" >
+                        <apex:facet name="start" > <apex:outputtext style="color:blue" value=" Loading..."/></apex:facet>
+                        <apex:facet name="stop" > <apex:outputtext style="color:blue" value=" "/></apex:facet>
+                    </apex:actionstatus>
+                </apex:pageBlockButtons>
+                
+         <!---COMMON INFORMATION SECTION-->
+                <apex:pageblocksection title="Common Request Parameters"  columns="2"  id="CommonPrmsId">
+                  <apex:pageblocksectionitem >
+   
+                        <apex:OUTPUTTEXT style="background-color:red;color:red;">Common Parameters Object Name</apex:OUTPUTTEXT>
+                        <apex:outputPanel >
+                          <apex:outputText style="background-color:red;color:red;" value="I"/>
+                        <apex:inputtext value="{!CommonParametersObjName}"/>
+                        </apex:outputPanel>
+                  </apex:pageblocksectionitem>
+
+                    <apex:pageblocksectionitem >
+
+                        <apex:OUTPUTTEXT style="background-color:red;color:red;">API Credential Object Name:</apex:OUTPUTTEXT>
+                        <apex:outputPanel >
+                          <apex:outputText style="background-color:red;color:red;" value="I"/>
+                        <apex:inputtext value="{!APICredentialObjName}"/>
+                        </apex:outputPanel>
+                    </apex:pageblocksectionitem>
+                        
+                </apex:pageblocksection>  
+                
+                <apex:pageblocksection title="Common Information" columns="2">
+                    <apex:pageblocksectionitem >
+                        <apex:outputText >Payment Type: </apex:outputText>
+                        <apex:outputpanel >
+                            <apex:outputText style="background-color:red;color:red;"
+                                value="I" />
+                            <apex:selectList value="{!PaymentType}" size="1">
+                                <apex:selectOptions value="{!PaymentTypeDropDown}"></apex:selectOptions>
+                               
+                                <apex:actionsupport event="onchange"
+                                    action="{!PaymentTypeOnChange}"
+                                    rerender="DDFeePayerId,panelIdAdvanceOptions," status="status">
+                                </apex:actionsupport>
+                            </apex:selectList>
+                        </apex:outputpanel>
+                    </apex:pageblocksectionitem>
+                    
+                    <apex:pageblocksectionitem >
+                        <apex:outputText >Memo:</apex:outputText>
+                        <apex:outputpanel >
+                            <apex:inputtext value="{!payRequest.Memo}"></apex:inputtext>
+                        </apex:outputpanel>
+                    </apex:pageblocksectionitem>
+                    
+                    <apex:pageBlockSectionItem >
+                        <apex:outputText >Fee Payer:</apex:outputText>
+                        <apex:outputpanel id="DDFeePayerId">
+                            <apex:selectList value="{!feesPayer}" size="1">
+                                <apex:selectOptions value="{!FeesPayers}"></apex:selectOptions>
+                            </apex:selectList>
+                        </apex:outputpanel>
+                    </apex:pageBlockSectionItem>
+                </apex:pageblocksection>
+                
+               
+
+                
+                <!-- SECTION -->  
+                <apex:pageblocksection title="Sender Information" columns="4"  id="SenderInfoId">
+                    <apex:pageblocksectionitem >
+
+                      <apex:outputText > Sender Email: </apex:outputText>
+                        <apex:outputpanel >
+                            <apex:inputtext value="{!SenderEmail}"></apex:inputtext>
+                        </apex:outputpanel>
+                        </apex:pageblocksectionitem>
+
+
+                        <apex:pageblocksectionitem >
+                        <apex:outputText >Tracking ID:</apex:outputText>
+                        <apex:outputpanel >
+                          
+                         <apex:inputtext value="{!payRequest.TrackingId}"></apex:inputtext>
+                        </apex:outputpanel>
+                    </apex:pageblocksectionitem>
+                    <apex:pageblocksectionitem rendered="true">
+                          <apex:outputText value="Reverse all payment on error"/ >
+                          <apex:inputcheckbox id="pptions" value="{!PayRequest.ReverseAllParallelPaymentsOnError}" />
+                    </apex:pageblocksectionitem>
+                </apex:pageblocksection>
+                
+                <apex:pageblocksection title="Preapproval Details" columns="2"  id="PresId">
+                  <apex:pageblocksectionitem >
+   
+                  <apex:OUTPUTTEXT >Pre-Approval Key:</apex:OUTPUTTEXT>
+                        <apex:inputtext value="{!payRequest.PreapprovalKey}"/>
+                        </apex:pageblocksectionitem>
+
+                    <apex:pageblocksectionitem >
+
+                        <apex:OUTPUTTEXT >Pin:</apex:OUTPUTTEXT>
+                        <apex:inputtext value="{!payRequest.Pin}"/>
+                    </apex:pageblocksectionitem>
+                        
+                </apex:pageblocksection>    
+              
+                <!-- SECTION --> 
+                <apex:pageblocksection title="Receiver Information" columns="2" id="ReceiverInfoId">
+                    <apex:pageblocksectionItem >
+                        <apex:outputtext value=""></apex:outputtext>
+                        <apex:actionRegion >
+
+                            <apex:outputPanel id="panelIdAdvanceOptions" >
+                                        <apex:datatable value="{!Receivers}" var="Receiver" frame="hsides" style="width:350px">
+                                            <apex:column >
+                                                <apex:facet name="header" >Email</apex:facet>
+                                                
+                                                <apex:inputText value="{!Receiver.Email}"></apex:inputText>
+                                            </apex:column>
+                                            
+                                            <apex:column >
+                                                <apex:facet name="header">Amount</apex:facet>
+                                                <apex:inputText value="{!Receiver.Amount}"></apex:inputText>
+                                            </apex:column>
+                                            <apex:column >
+                                                <apex:facet name="header">Invoice ID</apex:facet>
+                                                <apex:inputText value="{!Receiver.invoiceId}"></apex:inputText>
+                                            </apex:column>
+                                            <apex:column >
+                                                <apex:facet name="header">Payment Type</apex:facet>
+                                                <apex:inputText value="{!Receiver.PaymentType}"></apex:inputText>
+                                            </apex:column>
+                                            <apex:column rendered="{!IF(PaymentType=='Chained',true,false)}">
+                                                <apex:facet name="header">Primary</apex:facet>
+                                                <!--  apex:inputcheckbox id="PrimaryId" value="{!Receiver.Primary}" >
+                                                    <apex:actionSupport event="onSelect" action="{!onSelect_Checkbox}"></apex:actionSupport> 
+                                                 </apex:inputcheckbox -->
+                                                <apex:inputcheckbox id="contactOptions" value="{!Receiver.Primary}" onclick="deselectOther(this);" />
+                                                    <script>          
+                                                        var selectedChkbox;
+                                                        function deselectOther(chkBox) {
+                                                            if (chkBox.checked) {
+                                                                if ((chkBox != selectedChkbox) && (selectedChkbox != null)) {
+                                                                    selectedChkbox.checked = false;
+                                                                }
+                                                                selectedChkbox = chkBox;
+                                                            }            
+                                                        }
+                                                    </script> 
+                                            </apex:column>
+                                        </apex:datatable>
+                                </apex:outputPanel>
+                            </apex:actionRegion>
+                    </apex:pageblocksectionItem>
+                </apex:pageblocksection>
+                
+        <!-- Section response -->        
+                <apex:pageBlockSection title="Response">
+                    <apex:outputPanel id="display">
+                        <apex:outputPanel rendered="{!isDisplay}">
+                            <h2>Ack:</h2>
+                            <apex:outputText value="{!respEnvp.Ack}"/><br/>
+                            <h2>Build:</h2>
+                            <apex:outputText value="{!respEnvp.Build}"/><br/>
+                            <h2>correlationId:</h2>
+                            <apex:outputText value="{!respEnvp.CorrelationId}"/><br/>
+                            <h2>Timestamp:</h2>
+                            <apex:outputText value="{!respEnvp.StringTimestamp}"/><br/>
+                        </apex:outputPanel>
+                    </apex:outputPanel>
+                    <div style="text-align:center;border-top:medium;border-top-color:black"> 
+                        <apex:outputtext id="SuccMessageID" escape="false" value="{!SuccessMessage}" style="color:green;font-weight:18px;font-size:14px;text-align:center;"/>
+                    </div>
+                </apex:pageBlockSection>
+            </apex:pageblock>
+        </apex:outputpanel>
+    </apex:form>
+</apex:page>

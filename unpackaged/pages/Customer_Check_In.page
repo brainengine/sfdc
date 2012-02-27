@@ -1,0 +1,12 @@
+<apex:page standardController="Account" showHeader="true" sidebar="false">
+	<apex:form > 
+		<apex:pageBlock title="Welcome New Customer!">
+			Please Sign In. <p/>
+			Customer Name: <p/> 
+			<apex:inputField value="{!account.name}"/> <p/>
+			Description: <p/> 
+			<apex:inputField value="{!account.description}"/> <p/>
+			<apex:commandButton action="{!save}" value="Add to List"/> 
+		</apex:pageBlock>
+	</apex:form> 
+</apex:page>

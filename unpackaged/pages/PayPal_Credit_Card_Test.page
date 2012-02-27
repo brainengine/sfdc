@@ -1,0 +1,120 @@
+<apex:page controller="PayPalCreditCardController">
+	<apex:form >
+		<apex:pageBlock title="PayPal Credit Card Test Page">
+			<b>Credential Infomration</b><p/>
+			<table style="width: 75%">
+				<tr>
+					<td style="width: 100px">Credential:</td>
+					<td><apex:inputText value="{!strCredential}"/></td>
+				</tr>
+			</table>
+			<p/>
+			<b>Customer Infomration</b><p/>
+			<table style="width: 100%">
+				<tr>
+					<td style="width: 100px">First Name:</td>
+					<td><apex:inputText value="{!strFirstName}"/></td>
+				</tr>
+				<tr>
+					<td style="width: 100px">Last Name:</td>
+					<td><apex:inputText value="{!strLastName}"/></td>
+				</tr>
+				<tr>
+					<td style="width: 100px">Card Type:</td>
+					<td>
+						<apex:selectList id="cardType" value="{!cardType}" size="1">
+							<apex:selectOption itemValue="Visa" itemLabel="Visa"/>
+							<apex:selectOption itemValue="MasterCard" itemLabel="MasterCard"/>
+							<apex:selectOption itemValue="Discover" itemLabel="Discover"/>
+							<apex:selectOption itemValue="American Express" itemLabel="American Express"/>
+						</apex:selectList> 
+					</td>
+				</tr>
+				<tr>
+					<td style="width: 100px">Card Number:</td>
+					<td><apex:inputText value="{!strAccntNumber}"/></td>
+				</tr>
+				<tr>
+					<td style="width: 100px">Expiration Date:</td>
+					<td>
+						<apex:selectList id="expMonth" value="{!ExpMonth}" size="1">
+							<apex:selectOption itemValue="01" itemLabel="01"/>
+							<apex:selectOption itemValue="02" itemLabel="02"/>
+							<apex:selectOption itemValue="03" itemLabel="03"/>
+							<apex:selectOption itemValue="04" itemLabel="04"/>
+							<apex:selectOption itemValue="05" itemLabel="05"/>
+							<apex:selectOption itemValue="06" itemLabel="06"/>
+							<apex:selectOption itemValue="07" itemLabel="07"/>
+							<apex:selectOption itemValue="08" itemLabel="08"/>
+							<apex:selectOption itemValue="09" itemLabel="09"/>
+							<apex:selectOption itemValue="10" itemLabel="10"/>
+							<apex:selectOption itemValue="11" itemLabel="11"/>
+							<apex:selectOption itemValue="12" itemLabel="12"/>
+						</apex:selectList> 
+						<apex:selectList id="expYear" value="{!ExpYear}" size="1">
+							<apex:selectOption itemValue="2010" itemLabel="2010"/>
+							<apex:selectOption itemValue="2011" itemLabel="2011"/>
+							<apex:selectOption itemValue="2012" itemLabel="2012"/>
+							<apex:selectOption itemValue="2013" itemLabel="2013"/>
+							<apex:selectOption itemValue="2014" itemLabel="2014"/>
+							<apex:selectOption itemValue="2015" itemLabel="2015"/>
+							<apex:selectOption itemValue="2016" itemLabel="2016"/>
+						</apex:selectList> 
+					</td>
+				</tr>
+				<tr>
+					<td style="width: 100px">Verification #:</td>
+					<td><apex:inputText value="{!strCVV2}"/></td>
+				</tr>
+				<tr>
+					<td style="width: 100px">Amount:</td>
+					<td><apex:inputText value="{!strAMT}"/></td>
+				</tr>
+			</table><p/>
+			<b>Address Infomration</b><p/>
+			<table style="width: 53%">
+				<tr>
+					<td style="width: 100px">Address 1:</td>
+					<td><apex:inputText value="{!strStreet}"/></td>
+				</tr>
+				<tr>
+					<td style="width: 100px">Address 2:</td>
+					<td><apex:inputText value="{!strStreet2}"/></td>
+				</tr>
+				<tr>
+					<td style="width: 100px">City:</td>
+					<td>
+						<apex:inputText value="{!strCity}"/>
+					</td>
+				</tr>
+				<tr>
+					<td style="width: 100px">State:</td>
+					<td><apex:inputText value="{!strState}"/></td>
+				</tr>
+				<tr>
+					<td style="width: 100px">Zip Code:</td>
+					<td>
+						<apex:inputText value="{!strZip}"/>
+					</td>
+				</tr>
+				<tr>
+					<td style="width: 100px">Country:</td>
+					<td><apex:inputText value="{!strCountryCode}"/></td>
+				</tr>
+			</table>
+			<p/>
+			<apex:commandButton action="{!makePayment}" value="Make Payment" status="counterStatus" rerender="counter"/>&nbsp;&nbsp;&nbsp;
+			<p/>
+			<apex:outputpanel id="counter">
+				<apex:outputText value="{!strResponse}"/>
+				<!--<apex:actionSupport event="onclick" 
+				action="{!incrementCounter}" 
+				rerender="counter" status="counterStatus"/>-->
+			</apex:outputpanel>
+			<apex:actionStatus id="counterStatus" 
+				startText=" (processing payment...)" 
+			stopText=" "/>
+			<p/><p/>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

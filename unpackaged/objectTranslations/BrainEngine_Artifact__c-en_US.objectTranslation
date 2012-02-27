@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>BrainEngine Artifact</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>BrainEngine Artifacts</value>
+    </caseValues>
+    <fields>
+        <label><!-- Assigned To --></label>
+        <name>Assigned_To__c</name>
+        <relationshipLabel><!-- BrainEngine Artifacts (Assigned To) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Created --></label>
+        <name>Created__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Priority --></label>
+        <name>Priority__c</name>
+        <picklistValues>
+            <masterLabel>1 - Highest</masterLabel>
+            <translation><!-- 1 - Highest --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 - High</masterLabel>
+            <translation><!-- 2 - High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 - Medium</masterLabel>
+            <translation><!-- 3 - Medium --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4 - Log</masterLabel>
+            <translation><!-- 4 - Log --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5 - Lowest</masterLabel>
+            <translation><!-- 5 - Lowest --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Release --></label>
+        <name>Release__c</name>
+        <relationshipLabel><!-- BrainEngine Artifacts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Can&apos;t reproduce</masterLabel>
+            <translation><!-- Can&apos;t reproduce --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed</masterLabel>
+            <translation><!-- Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Duplicate</masterLabel>
+            <translation><!-- Duplicate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fixed</masterLabel>
+            <translation><!-- Fixed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not a bug</masterLabel>
+            <translation><!-- Not a bug --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Re-opened (not fixed)</masterLabel>
+            <translation><!-- Re-opened (not fixed) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Submitted By --></label>
+        <name>Submitted_By__c</name>
+        <relationshipLabel><!-- BrainEngine Artifacts (Submitted By) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- auto --></label>
+        <name>auto__c</name>
+    </fields>
+    <fields>
+        <label><!-- d --></label>
+        <name>d__c</name>
+    </fields>
+    <fields>
+        <label><!-- formula --></label>
+        <name>formula__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,4 @@
+<apex:page standardcontroller="Account" extensions="AccountExtension" showHeader="false">
+	<!-- This page is meant to be embedded in to the Account Detail page. It requires an Account Id parameter. -->
+	<c:PilesOfMoney jsondata="{!Opportunities}" title="Opportunities" />
+</apex:page>

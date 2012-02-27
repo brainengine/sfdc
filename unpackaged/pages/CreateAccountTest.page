@@ -1,0 +1,341 @@
+<apex:page sidebar="false" controller="ControllerCreateAccountApi">
+    <table align="center" ><tr>
+        <td style="font-size:18px"> 
+            <table><tr><td style="color:darkblue;">
+                CREATE ACCOUNT TEST 
+            </td></tr></table>
+        </td>
+    </tr></table>
+   
+    <apex:form >
+        <apex:outputpanel style="width:300px;height:400px;" >
+            <div style="text-align:center;border-top:medium;border-top-color:black"> 
+                <apex:outputtext id="ErrMessageID" escape="false" value="{!MainMessage}" style="background-color:yellow;color:red;font-weight:18px;font-size:14px;text-align:center;"/>
+            </div>
+            
+            <apex:pageblock title="Transaction">
+                <apex:pageBlockButtons >
+                    <apex:commandButton action="{!apply}" value="Apply" rerender="ErrMessageID,display,display1,SuccMessageID" status="status"/>
+                    <apex:actionstatus id="status" >
+                        <apex:facet name="start" > <apex:outputtext style="color:blue" value=" Loading..."/></apex:facet>
+                        <apex:facet name="stop" > <apex:outputtext style="color:blue" value=" "/></apex:facet>
+                    </apex:actionstatus>
+                </apex:pageBlockButtons>
+                
+                <apex:pageblocksection title="Common Request Parameters"  columns="2"  id="CommonPrmsId">
+                  <apex:pageblocksectionitem >
+   
+                  		<apex:OUTPUTTEXT style="background-color:red;color:red;">Common Parameters Object Name</apex:OUTPUTTEXT>
+                  		<apex:outputPanel >
+                          <apex:outputText style="background-color:red;color:red;" value="I"/>
+                        <apex:inputtext value="{!CommonParametersObjName}"/>
+                        </apex:outputPanel>
+                  </apex:pageblocksectionitem>
+
+                    <apex:pageblocksectionitem >
+
+                        <apex:OUTPUTTEXT style="background-color:red;color:red;">API Credential Object Name:</apex:OUTPUTTEXT>
+                        <apex:outputPanel >
+                          <apex:outputText style="background-color:red;color:red;" value="I"/>
+                        <apex:inputtext value="{!APICredentialObjName}"/>
+                        </apex:outputPanel>
+                    </apex:pageblocksectionitem>
+                        
+                </apex:pageblocksection>  
+                
+                <apex:pageBlockSection title="Account Details">
+                	<apex:pageblocksectionitem >
+                        <apex:outputText >Account Type: </apex:outputText>
+                        <apex:outputPanel >
+                            <apex:inputtext value="{!CreateAccountRequest.AccountType}" />
+                        </apex:outputPanel>
+                    </apex:pageblocksectionitem>
+                    
+                    <apex:pageblocksectionitem >
+                        <apex:outputText >Sandbox Email Address: </apex:outputText>
+                        <apex:outputPanel >
+                            <apex:outputText style="background-color:red;color:red;" value="I"/>
+                            <apex:inputtext value="{!CreateAccountRequest.SandboxEmailAddress}" />
+                        </apex:outputPanel>
+                    </apex:pageblocksectionitem>
+                    
+                    
+                    <apex:pageblocksectionitem >
+                        <apex:outputText >Citizenship Country Code: </apex:outputText>
+                        <apex:outputPanel >
+                            <apex:inputtext value="{!CreateAccountRequest.CitizenshipCountryCode}" />
+                        </apex:outputPanel>
+                    </apex:pageblocksectionitem>
+                    
+                    <apex:pageblocksectionitem >
+                        <apex:outputText >Contact Phone Number: </apex:outputText>
+                        <apex:outputPanel >
+                            <apex:outputText style="background-color:red;color:red;" value="I"/>
+                            <apex:inputtext value="{!CreateAccountRequest.ContactPhoneNumber}" />
+                        </apex:outputPanel>
+                    </apex:pageblocksectionitem>
+                    
+                    <apex:pageblocksectionitem >
+                        <apex:outputText >Currency Code: </apex:outputText>
+                        <apex:outputPanel >
+                            <apex:inputtext value="{!CreateAccountRequest.CurrencyCode}" />
+                        </apex:outputPanel>
+                    </apex:pageblocksectionitem>
+                    
+                    <apex:pageblocksectionitem >
+                        <apex:outputText >Date Of Birth: (dd/mm/yyyy)</apex:outputText>
+                        <apex:outputPanel >
+                            <apex:inputtext value="{!DateOfBirth}" />
+                        </apex:outputPanel>
+                    </apex:pageblocksectionitem>
+                    
+                    <apex:pageblocksectionitem >
+                        <apex:outputText >Email Address: </apex:outputText>
+                        <apex:outputPanel >
+                            <apex:inputtext value="{!CreateAccountRequest.EmailAddress}" />
+                        </apex:outputPanel>
+                    </apex:pageblocksectionitem>
+                    
+                    <apex:pageblocksectionitem >
+                        <apex:outputText >Notification URL: </apex:outputText>
+                        <apex:outputPanel >
+                            <apex:inputtext value="{!CreateAccountRequest.NotificationURL}" />
+                        </apex:outputPanel>
+                    </apex:pageblocksectionitem>
+                    
+                    <apex:pageblocksectionitem >
+                        <apex:outputText >Preferred Language Code: </apex:outputText>
+                        <apex:outputPanel >
+                            <apex:outputText style="background-color:red;color:red;" value="I"/>
+                            <apex:inputtext value="{!CreateAccountRequest.PreferredLanguageCode}" />
+                        </apex:outputPanel>
+                    </apex:pageblocksectionitem>
+                    
+                    <apex:pageblocksectionitem >
+                        <apex:outputText >Registration Type: </apex:outputText>
+                        <apex:outputPanel >
+                            <apex:inputtext value="{!CreateAccountRequest.RegistrationType}" />
+                        </apex:outputPanel>
+                    </apex:pageblocksectionitem>
+                 
+                </apex:pageBlockSection>
+                
+                <apex:pageBlockSection title="Partner Field">
+                    <apex:pageblocksectionitem >
+                        <apex:outputText >Partner Field1: </apex:outputText>
+                        <apex:outputPanel >
+                            <apex:inputtext value="{!CreateAccountRequest.PartnerField1}" />
+                        </apex:outputPanel>
+                    </apex:pageblocksectionitem>
+                    
+                    <apex:pageblocksectionitem >
+                        <apex:outputText >Partner Field2: </apex:outputText>
+                        <apex:outputPanel >
+                            <apex:inputtext value="{!CreateAccountRequest.PartnerField2}" />
+                        </apex:outputPanel>
+                    </apex:pageblocksectionitem>
+                    
+                    <apex:pageblocksectionitem >
+                        <apex:outputText >Partner Field3: </apex:outputText>
+                        <apex:outputPanel >
+                            <apex:inputtext value="{!CreateAccountRequest.PartnerField3}" />
+                        </apex:outputPanel>
+                    </apex:pageblocksectionitem>
+                    
+                    <apex:pageblocksectionitem >
+                        <apex:outputText >Partner Field4: </apex:outputText>
+                        <apex:outputPanel >
+                            <apex:inputtext value="{!CreateAccountRequest.PartnerField4}" />
+                        </apex:outputPanel>
+                    </apex:pageblocksectionitem>
+                    
+                    <apex:pageblocksectionitem >
+                        <apex:outputText >Partner Field5: </apex:outputText>
+                        <apex:outputPanel >
+                            <apex:inputtext value="{!CreateAccountRequest.PartnerField5}" />
+                        </apex:outputPanel>
+                    </apex:pageblocksectionitem>
+                    
+                </apex:pageBlockSection>
+                 
+                <apex:pageBlockSection title="Address">
+                    <apex:pageblocksectionitem >
+                        <apex:outputText >Line1: </apex:outputText>
+                        <apex:outputPanel >
+                            <apex:outputText style="background-color:red;color:red;" value="I"/>
+                            <apex:inputtext value="{!Address.Line1}" />
+                        </apex:outputPanel>
+                    </apex:pageblocksectionitem>
+                    
+                    <apex:pageblocksectionitem >
+                        <apex:outputText >Line2: </apex:outputText>
+                        <apex:outputPanel >
+                            <apex:inputtext value="{!Address.Line2}" />
+                        </apex:outputPanel>
+                    </apex:pageblocksectionitem>
+                    
+                    <apex:pageblocksectionitem >
+                        <apex:outputText >City: </apex:outputText>
+                        <apex:outputPanel >
+                            <apex:outputText style="background-color:red;color:red;" value="I"/>
+                            <apex:inputtext value="{!Address.City}" />
+                        </apex:outputPanel>
+                    </apex:pageblocksectionitem>
+                    
+                    <apex:pageblocksectionitem >
+                        <apex:outputText >State: </apex:outputText>
+                        <apex:outputPanel >
+                            <apex:inputtext value="{!Address.State}" />
+                        </apex:outputPanel>
+                    </apex:pageblocksectionitem>
+                    
+                    <apex:pageblocksectionitem >
+                        <apex:outputText >Postal Code: </apex:outputText>
+                        <apex:outputPanel >
+                            <apex:inputtext value="{!Address.PostalCode}" />
+                        </apex:outputPanel>
+                    </apex:pageblocksectionitem>
+                    
+                    <apex:pageblocksectionitem >
+                        <apex:outputText >Country Code: </apex:outputText>
+                        <apex:outputPanel >
+                            <apex:outputText style="background-color:red;color:red;" value="I"/>
+                            <apex:inputtext value="{!Address.CountryCode}" />
+                        </apex:outputPanel>
+                    </apex:pageblocksectionitem>
+                </apex:pageBlockSection>
+                
+                <apex:pageBlockSection title="Business Info: ">
+                    <apex:pageblocksectionitem >
+                        <apex:outputText >Business Address: </apex:outputText>
+                        <apex:outputPanel >
+                            <apex:inputtext value="{!BusinessInfo.BusinessAddress}" />
+                        </apex:outputPanel>
+                    </apex:pageblocksectionitem>
+                    
+                    <apex:pageblocksectionitem >
+                        <apex:outputText >Business Name: </apex:outputText>
+                        <apex:outputPanel >
+                            <apex:inputtext value="{!BusinessInfo.BusinessName}" />
+                        </apex:outputPanel>
+                    </apex:pageblocksectionitem>
+                    
+                    <apex:pageblocksectionitem >
+                        <apex:outputText >Category: </apex:outputText>
+                        <apex:outputPanel >
+                            <apex:inputtext value="{!BusinessInfo.Category}" />
+                        </apex:outputPanel>
+                    </apex:pageblocksectionitem>
+                    
+                    <apex:pageblocksectionitem >
+                        <apex:outputText >SubCategory: </apex:outputText>
+                        <apex:outputPanel >
+                            <apex:inputtext value="{!BusinessInfo.SubCategory}" />
+                        </apex:outputPanel>
+                    </apex:pageblocksectionitem>
+                    
+                    <apex:pageblocksectionitem >
+                        <apex:outputText >Workphone: </apex:outputText>
+                        <apex:outputPanel >
+                            <apex:inputtext value="{!BusinessInfo.Workphone}" />
+                        </apex:outputPanel>
+                    </apex:pageblocksectionitem>
+                    
+                </apex:pageBlockSection>
+                
+                
+                <apex:pageBlockSection title="Create Account WebOptions: ">
+                    <apex:pageblocksectionitem >
+                        <apex:outputText >Return URL: </apex:outputText>
+                        <apex:outputPanel >
+                            <apex:outputText style="background-color:red;color:red;" value="I"/>
+                            <apex:inputtext value="{!CreateAccountWebOptions.ReturnURL}" />
+                        </apex:outputPanel>
+                    </apex:pageblocksectionitem>
+                </apex:pageBlockSection>
+                
+                <apex:pageBlockSection title="Name Info: ">
+                    <apex:pageblocksectionitem >
+                        <apex:outputText >Salutation: </apex:outputText>
+                        <apex:outputPanel >
+                            <apex:inputtext value="{!NameInfo.Salutation}" />
+                        </apex:outputPanel>
+                    </apex:pageblocksectionitem>
+                    
+                    <apex:pageblocksectionitem >
+                        <apex:outputText >First Name: </apex:outputText>
+                        <apex:outputPanel >
+                            <apex:outputText style="background-color:red;color:red;" value="I"/>
+                            <apex:inputtext value="{!NameInfo.FirstName}" />
+                        </apex:outputPanel>
+                    </apex:pageblocksectionitem>
+                    
+                    <apex:pageblocksectionitem >
+                        <apex:outputText >Middle Name: </apex:outputText>
+                        <apex:outputPanel >
+                            <apex:inputtext value="{!NameInfo.MiddleName}" />
+                        </apex:outputPanel>
+                    </apex:pageblocksectionitem>
+                    
+                    <apex:pageblocksectionitem >
+                        <apex:outputText >Last Name: </apex:outputText>
+                        <apex:outputPanel >
+                            <apex:outputText style="background-color:red;color:red;" value="I"/>
+                            <apex:inputtext value="{!NameInfo.LastName}" />
+                        </apex:outputPanel>
+                    </apex:pageblocksectionitem>
+                    
+                    <apex:pageblocksectionitem >
+                        <apex:outputText >Suffix: </apex:outputText>
+                        <apex:outputPanel >
+                        <apex:inputtext value="{!NameInfo.Suffix}" />
+                        </apex:outputPanel>
+                    </apex:pageblocksectionitem>
+                    
+                </apex:pageBlockSection>
+                   
+                <apex:pageBlockSection title="Response" columns="2">
+                   <apex:outputPanel id="display" >
+                     <apex:outputPanel rendered="{!isDisplay}">
+                       
+                       <h2>Response Envelope</h2><br/>
+                       <h2>Ack:</h2>
+                       <apex:outputText value="{!respEnvp.Ack}"></apex:outputText><br/>
+                       
+                        <h2>Correlation Id:</h2>
+                       <apex:outputText value="{!respEnvp.CorrelationId}"></apex:outputText><br/>
+                       
+                       <h2>Build:</h2>
+                       <apex:outputText value="{!respEnvp.Build}"></apex:outputText><br/>
+                       
+                       <h2>Timestamp:</h2>
+                       <apex:outputText value="{!respEnvp.StringTimestamp}"></apex:outputText><br/>
+                                             
+                 </apex:outputPanel>
+                 </apex:outputPanel>                  
+               </apex:pageBlockSection> 
+               
+               
+               
+        <!-- Section response -->        
+                <apex:pageBlockSection title="Response Envelope">
+                    <apex:outputPanel id="display1">
+                        <apex:outputPanel rendered="{!isErr}">
+                            <h2>Ack:</h2>
+                            <apex:outputText value="{!respEnvp.Ack}"/><br/>
+                            <h2>Build:</h2>
+                            <apex:outputText value="{!respEnvp.Build}"/><br/>
+                            <h2>correlationId:</h2>
+                            <apex:outputText value="{!respEnvp.CorrelationId}"/><br/>
+                            <h2>Timestamp:</h2>
+                            <apex:outputText value="{!respEnvp.StringTimestamp}"/><br/>
+                        </apex:outputPanel>
+                    </apex:outputPanel>
+                    <div style="text-align:center;border-top:medium;border-top-color:black"> 
+		                <apex:outputtext id="SuccMessageID" escape="false" value="{!SuccessMessage}" style="color:green;font-weight:18px;font-size:14px;text-align:center;"/>
+		            </div>
+                </apex:pageBlockSection>
+            </apex:pageblock>
+        </apex:outputpanel>
+    </apex:form>
+</apex:page>

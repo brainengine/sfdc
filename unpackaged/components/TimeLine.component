@@ -1,0 +1,40 @@
+<apex:component >
+	<apex:attribute name="jsondata" description="This is the chart data, data format described here: http://code.google.com/apis/visualization/documentation/gallery/annotatedtimeline.html" type="string" required="true" />
+	<apex:attribute name="width" description="This is the width ex: 700px" type="string" default="700px" />
+	<apex:attribute name="height" description="This is the chart height" type="string" default="250px" />
+	<apex:attribute name="displayAnnotations" description="Add Annotations to this time line" type="Boolean" default="true" />
+	<apex:attribute name="annotationsWidth"	description="Percent of chart given to text annotations" type="integer" default="30" />
+	<apex:attribute name="zoomStartTime" description="Sets the start time of the selected zoom range. Format: new Date(YYYY, mm, dd), where January:mm = 0" type="String" required="true" />
+	<apex:attribute name="zoomEndTime" description="Sets the end time of the selected zoom range. Format: new Date(YYYY, mm, dd), where January:mm = 0" type="String" required="true" />
+	<apex:attribute name="displayZoomButtons" description="If false, then the top-left zoom buttons are not displayed. " type="Boolean" default="true"/>
+	<apex:attribute name="colors" description="The colors to use for the chart lines and labels. An array of strings. Each element is a string in a valid HTML color format. For example 'red' or '#00cc00'." type="string"/>
+	<!-- Doc for this component is here: http://code.google.com/apis/visualization/documentation/gallery/annotatedtimeline.html -->
+
+	<apex:outputPanel id="chart_div" layout="block" style="width: {!width}; height: {!height};"> 
+		
+	<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+	<script type="text/javascript">
+		google.load("visualization", "1", {packages: ["annotatedtimeline" ]});
+		google.setOnLoadCallback(drawTimeline); 
+		
+		function drawTimeline() {
+		 
+		var data = new google.visualization.DataTable( eval( '({!jsondata})' )  );
+		  
+		var chartDiv = document.getElementById('{!$Component.chart_div}');
+		var chart = new google.visualization.AnnotatedTimeLine( chartDiv );
+		 	
+		chart.draw(data, {
+		 	displayAnnotations: {!displayAnnotations} ,
+		  	annotationsWidth: {!annotationsWidth},
+		  	displayZoomButtons: {!displayZoomButtons},
+		  	allowHtml: true, 
+		  	zoomStartTime: {!zoomStartTime},
+		  	zoomEndTime: {!zoomEndTime},
+		  	colors : [{!colors}]
+		  	}); 
+		 }
+		</script>
+		
+	</apex:outputPanel>
+</apex:component>

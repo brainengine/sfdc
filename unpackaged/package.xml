@@ -2,6 +2,10 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
         <members>*</members>
+        <name>AnalyticSnapshot</name>
+    </types>
+    <types>
+        <members>*</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -10,7 +14,19 @@
     </types>
     <types>
         <members>*</members>
+        <name>ApexPage</name>
+    </types>
+    <types>
+        <members>*</members>
         <name>ApexTrigger</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ArticleType</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ArticleType</name>
     </types>
     <types>
         <members>*</members>
@@ -30,11 +46,124 @@
     </types>
     <types>
         <members>*</members>
+        <name>CustomObjectTranslation</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomPageWebLink</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomSite</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>BugsandReleases/AppforceBugTracker</members>
+        <members>Milestones_PM_Dashboards/Milestones_PM_Individual_Dashboard</members>
+        <members>Milestones_PM_Dashboards/Milestones_PM_Project_Snapshots</members>
+        <name>Dashboard</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>DataCategoryGroup</name>
+    </types>
+    <types>
+        <members>BrainEngine/beLogo.png</members>
+        <members>BrainEngine/gggg_js.js</members>
+        <members>Logos/PayPalX_Logo.jpg</members>
+        <members>Logos/PayPalX_Small_Logo.png</members>
+        <members>Logos/PayPal_Logo.jpg</members>
+        <members>Project_Management_Folder/Starter_Project_LPM1a.xml</members>
+        <name>Document</name>
+    </types>
+    <types>
+        <members>ggggg/Available_For_Us</members>
+        <members>ggggg/SalesNewCustomerEmail</members>
+        <name>EmailTemplate</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>EntitlementTemplate</name>
+    </types>
+    <types>
+        <members>*</members>
         <name>HomePageComponent</name>
     </types>
     <types>
         <members>*</members>
         <name>HomePageLayout</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Letterhead</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>PermissionSet</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Portal</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Profile</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>RemoteSiteSetting</name>
+    </types>
+    <types>
+        <members>AppExchangeBugTrackerReports/BugsbyProject</members>
+        <members>AppExchangeBugTrackerReports/BugswCases</members>
+        <members>AppExchangeBugTrackerReports/ReleaseBugs</members>
+        <members>AppExchangeBugTrackerReports/TotalNumberofBugs</members>
+        <members>Milestone_Project_Management/Active_Projects_Open_Milestones</members>
+        <members>Milestone_Project_Management/Blocked_Task_Report</members>
+        <members>Milestone_Project_Management/Blocked_Tasks_by_Project</members>
+        <members>Milestone_Project_Management/Milestone_Task_Expenses_Summary</members>
+        <members>Milestone_Project_Management/Milestone_Times_Summary</members>
+        <members>Milestone_Project_Management/Milestones_and_Open_Tasks_by_Proj_LPM1</members>
+        <members>Milestone_Project_Management/My_Blocked_Tasks_DB</members>
+        <members>Milestone_Project_Management/My_Incomplete_Tasks_By_Priority</members>
+        <members>Milestone_Project_Management/My_Incomplete_Tasks_By_Project</members>
+        <members>Milestone_Project_Management/My_Late_Tasks_DB</members>
+        <members>Milestone_Project_Management/My_Project_Hours_Week_DB</members>
+        <members>Milestone_Project_Management/My_Project_Tasks</members>
+        <members>Milestone_Project_Management/Open_Tasks_By_Project_LPM1</members>
+        <members>Milestone_Project_Management/Overdue_Tasks_by_Project</members>
+        <members>Milestone_Project_Management/Project_Snapshot</members>
+        <members>Milestone_Project_Management/Project_Snapshot_List</members>
+        <members>Milestone_Project_Management/Project_Tasks_By_Assignee</members>
+        <members>Milestone_Project_Management/Snapshot_Matrix_Open_Tasks_by_Day</members>
+        <members>Milestone_Project_Management/Snapshot_Project_Date_Open_Tasks_DB</members>
+        <members>Milestone_Project_Management/Snapshots_Active_Project_Count_DB</members>
+        <members>Milestone_Project_Management/Snapshots_Total_Estimated_Task_Hours</members>
+        <members>Milestone_Project_Management/Summary_My_Blocked_Tasks_LPM1</members>
+        <members>Milestone_Project_Management/Summary_My_Late_Tasks_LPM1</members>
+        <members>Milestone_Project_Management/Tasks_By_Project_LPM1</members>
+        <members>Milestone_Project_Management/User_Expense_Incurred</members>
+        <members>Milestone_Project_Management/User_Time_Incurred</members>
+        <name>Report</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ReportType</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>StaticResource</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Workflow</name>
     </types>
     <version>24.0</version>
 </Package>

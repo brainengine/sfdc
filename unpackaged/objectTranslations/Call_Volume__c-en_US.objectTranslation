@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Call Volume</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Call Volumes</value>
+    </caseValues>
+    <fields>
+        <label><!-- Date --></label>
+        <name>Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hour --></label>
+        <name>Hour__c</name>
+        <picklistValues>
+            <masterLabel>1 PM</masterLabel>
+            <translation><!-- 1 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10 AM</masterLabel>
+            <translation><!-- 10 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11 AM</masterLabel>
+            <translation><!-- 11 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 PM</masterLabel>
+            <translation><!-- 2 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 PM</masterLabel>
+            <translation><!-- 3 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4 PM</masterLabel>
+            <translation><!-- 4 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8 AM</masterLabel>
+            <translation><!-- 8 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9 AM</masterLabel>
+            <translation><!-- 9 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Noon</masterLabel>
+            <translation><!-- Noon --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Number of Calls --></label>
+        <name>Number_of_Calls__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

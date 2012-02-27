@@ -1,0 +1,104 @@
+<apex:page sidebar="false" controller="ControllerCancelPreapprovalApi">
+    <table align="center" ><tr>
+        <td style="font-size:18px"> 
+            <table><tr><td style="color:darkblue;">
+                CANCEL PREAPPROVAL TEST 
+            </td></tr></table>
+        </td>
+    </tr></table>
+    
+    <apex:form >
+        <apex:outputpanel style="width:300px;height:400px;" >
+            <div style="text-align:center;border-top:medium;border-top-color:black"> 
+                <apex:outputtext id="ErrMessageID" escape="false" value="{!MainMessage}" style="background-color:yellow;color:red;font-weight:18px;font-size:14px;text-align:center;"/>
+                
+            </div>
+            
+            <apex:pageblock title="Transaction">
+                <apex:pageBlockButtons >
+                    <apex:commandButton action="{!apply}" value="Apply" rerender="ErrMessageID,display,responerr" status="status"/>
+                    <apex:actionstatus id="status" >
+                        <apex:facet name="start" > <apex:outputtext style="color:blue" value=" Loading..."/></apex:facet>
+                        <apex:facet name="stop" > <apex:outputtext style="color:blue" value=" "/></apex:facet>
+                    </apex:actionstatus>
+                </apex:pageBlockButtons>
+                
+                
+             <!--SECTION--> 
+             <apex:pageblocksection title="Common Request Parameters"  columns="2"  id="CommonPrmsId">
+                  <apex:pageblocksectionitem >
+   
+                  		<apex:OUTPUTTEXT style="background-color:red;color:red;">Common Parameters Object Name</apex:OUTPUTTEXT>
+                  		<apex:outputPanel >
+                          <apex:outputText style="background-color:red;color:red;" value="I"/>
+                        <apex:inputtext value="{!CommonParametersObjName}"/>
+                        </apex:outputPanel>
+                  </apex:pageblocksectionitem>
+
+                    <apex:pageblocksectionitem >
+
+                        <apex:OUTPUTTEXT style="background-color:red;color:red;">API Credential Object Name:</apex:OUTPUTTEXT>
+                        <apex:outputPanel >
+                          <apex:outputText style="background-color:red;color:red;" value="I"/>
+                        <apex:inputtext value="{!APICredentialObjName}"/>
+                        </apex:outputPanel>
+                    </apex:pageblocksectionitem>
+                        
+                </apex:pageblocksection>  
+             <apex:pageBlockSection title="PreapprovalRequest Details">
+                    <apex:pageblocksectionitem >
+                        <apex:outputText value="Preapproval Key:"/>
+                        <apex:outputPanel >
+                          <apex:outputText style="background-color:red;color:red;" value="I"/>
+                           <apex:inputText value="{!cancelPreapprovalRequest.PreapprovalKey}" />
+                        </apex:outputPanel>
+                 </apex:pageblocksectionitem> 
+                 
+                
+                 
+             </apex:pageBlockSection>
+              
+          <apex:pageBlockSection title="RESPONSE" columns="4">
+               <apex:outputPanel id="display">
+                   <apex:outputPanel rendered="{!isDisplay}" >
+                  
+                   <h2>Ack:</h2>
+                   <apex:outputText value="{!respEnvp.Ack}"></apex:outputText><br/>
+                       
+                   <h2>Correlation Id:</h2>
+                   <apex:outputText value="{!respEnvp.CorrelationId}"></apex:outputText><br/>
+                       
+                   <h2>Build:</h2>
+                   <apex:outputText value="{!respEnvp.Build}"></apex:outputText><br/>
+                       
+                   <h2>Timestamp:</h2>
+                   <apex:outputText value="{!respEnvp.StringTimestamp}"></apex:outputText><br/>
+                       
+                   </apex:outputPanel>
+               
+               </apex:outputPanel>
+                   
+             
+           </apex:pageBlockSection> 
+           
+           <apex:pageBlockSection title="Response Envelope">
+                   <apex:outputPanel id="responerr">
+                       <apex:outputPanel rendered="{! isErr }">
+                           <h2>Ack:</h2>
+                       <apex:outputText value="{!respEnvp.Ack}"></apex:outputText><br/>
+                       
+                        <h2>Correlation Id:</h2>
+                       <apex:outputText value="{!respEnvp.CorrelationId}"></apex:outputText><br/>
+                       
+                       <h2>Build:</h2>
+                       <apex:outputText value="{!respEnvp.Build}"></apex:outputText><br/>
+                       
+                       <h2>Timestamp:</h2>
+                       <apex:outputText value="{!respEnvp.StringTimestamp}"></apex:outputText><br/>
+                       </apex:outputPanel>
+                   </apex:outputPanel>
+               </apex:pageBlockSection>      
+           </apex:pageblock> 
+        </apex:outputpanel>
+    </apex:form>
+</apex:page>

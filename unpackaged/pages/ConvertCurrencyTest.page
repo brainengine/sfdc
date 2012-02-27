@@ -1,0 +1,143 @@
+<apex:page sidebar="false" controller="ControllerConvertCurrencyApi">
+    <table align="center" ><tr>
+        <td style="font-size:18px"> 
+            <table><tr><td style="color:darkblue;">
+                CONVERT CURRENCY TEST 
+            </td></tr></table>
+        </td>
+    </tr></table>
+    
+    <apex:form >
+        <apex:outputpanel style="width:300px;height:400px;" >
+            <div style="text-align:center;border-top:medium;border-top-color:black"> 
+                <apex:outputtext id="ErrMessageID" escape="false" value="{!MainMessage}" style="background-color:yellow;color:red;font-weight:18px;font-size:14px;text-align:center;"/>
+            </div>
+            
+            <apex:pageblock title="Transaction">
+                <apex:pageBlockButtons >
+                    <apex:commandButton action="{!apply}" value="Apply" rerender="ErrMessageID,display,display1" status="status"/>
+                    <apex:actionstatus id="status" >
+                        <apex:facet name="start" > <apex:outputtext style="color:blue" value=" Loading..."/></apex:facet>
+                        <apex:facet name="stop" > <apex:outputtext style="color:blue" value=" "/></apex:facet>
+                    </apex:actionstatus>
+                </apex:pageBlockButtons>
+                
+                <apex:pageblocksection title="Common Request Parameters"  columns="2"  id="CommonPrmsId">
+                  <apex:pageblocksectionitem >
+   
+                  		<apex:OUTPUTTEXT style="background-color:red;color:red;">Common Parameters Object Name</apex:OUTPUTTEXT>
+                  		<apex:outputPanel >
+                          <apex:outputText style="background-color:red;color:red;" value="I"/>
+                        <apex:inputtext value="{!CommonParametersObjName}"/>
+                        </apex:outputPanel>
+                  </apex:pageblocksectionitem>
+
+                    <apex:pageblocksectionitem >
+
+                        <apex:OUTPUTTEXT style="background-color:red;color:red;">API Credential Object Name:</apex:OUTPUTTEXT>
+                        <apex:outputPanel >
+                          <apex:outputText style="background-color:red;color:red;" value="I"/>
+                        <apex:inputtext value="{!APICredentialObjName}"/>
+                        </apex:outputPanel>
+                    </apex:pageblocksectionitem>
+                        
+                </apex:pageblocksection>  
+                <!-- SECTION --> 
+                <apex:pageblocksection title="Currency Information" columns="2" id="ReceiverInfoId">
+                    <apex:pageblocksectionItem >
+                        <apex:outputtext value=""></apex:outputtext>
+                        <apex:actionRegion >
+
+                            <apex:outputPanel id="panelIdAdvanceOptions" >
+                                        <apex:datatable value="{!CurrencyInfoList}" var="InfoCurrency" frame="hsides" style="width:350px">
+                                            <apex:column >
+                                                <apex:facet name="header" >Base Amount</apex:facet>
+                                                
+                                                <apex:inputText value="{!InfoCurrency.BaseAmount.Amount}"></apex:inputText>
+                                            </apex:column>
+                                            
+                                            <apex:column >
+                                                <apex:facet name="header">Base Code</apex:facet>
+                                                <apex:inputText value="{!InfoCurrency.BaseAmount.Code}"></apex:inputText>
+                                            </apex:column>
+                                            <apex:column >
+                                                <apex:facet name="header">Convert To Code</apex:facet>
+                                                <apex:inputText value="{!InfoCurrency.Code}"></apex:inputText>
+                                            </apex:column>
+                                       </apex:datatable>
+                                       <apex:commandButton action="{!Add}" value="Add" />
+                                </apex:outputPanel>
+                            </apex:actionRegion>
+                    </apex:pageblocksectionItem>
+                </apex:pageblocksection>
+                
+                
+                <apex:pageBlockSection title="Response" columns="2">
+                   <apex:outputPanel id="display" >
+                     <apex:outputPanel rendered="{!isDisplay}">
+                       
+                       <h2>Response Envelope</h2><br/>
+                       <h2>Ack:</h2>
+                       <apex:outputText value="{!respEnvp.Ack}"></apex:outputText><br/>
+                       
+                        <h2>Correlation Id:</h2>
+                       <apex:outputText value="{!respEnvp.CorrelationId}"></apex:outputText><br/>
+                       
+                       <h2>Build:</h2>
+                       <apex:outputText value="{!respEnvp.Build}"></apex:outputText><br/>
+                       
+                       <h2>Timestamp:</h2>
+                       <apex:outputText value="{!respEnvp.StringTimestamp}"></apex:outputText><br/>
+                       
+                       
+                                           
+                      <h2>Estimated Amount Table</h2><br/>
+                       <apex:dataTable value="{!ConvertCurrencyResponse.EstimatedAmountTable}" var="test" cellpadding="3" >
+                           <apex:column >
+                               <apex:facet name="header"> Base Amount</apex:facet>
+                               <apex:outputText value="{!test.BaseAmount.Amount}"></apex:outputText>
+                           </apex:column>
+                           <apex:column >
+                               <apex:facet name="header"> Base Code</apex:facet>
+                               <apex:outputText value="{!test.BaseAmount.Code}"></apex:outputText>
+                           </apex:column>
+                            <apex:column >
+                               <apex:facet name="header"> Currency List Returned</apex:facet>
+                               <apex:dataTable value="{!test.CurrencyList}" var="currency" cellpadding="3" >
+                               <apex:column >
+                               <apex:facet name="header"> Amount</apex:facet>
+                               <apex:outputText value="{!currency.Amount}"></apex:outputText>
+                               </apex:column>
+                               <apex:column >
+                               <apex:facet name="header"> Code</apex:facet>
+                               <apex:outputText value="{!currency.Code}"></apex:outputText>
+                               </apex:column>
+                               </apex:dataTable>
+                           </apex:column>
+                       </apex:dataTable>
+                       
+                 </apex:outputPanel>
+                 </apex:outputPanel>                  
+               </apex:pageBlockSection> 
+               
+               
+               
+        <!-- Section response -->        
+                <apex:pageBlockSection title="Response Envelope">
+                    <apex:outputPanel id="display1">
+                        <apex:outputPanel rendered="{!isErr}">
+                            <h2>Ack:</h2>
+                            <apex:outputText value="{!respEnvp.Ack}"/><br/>
+                            <h2>Build:</h2>
+                            <apex:outputText value="{!respEnvp.Build}"/><br/>
+                            <h2>correlationId:</h2>
+                            <apex:outputText value="{!respEnvp.CorrelationId}"/><br/>
+                            <h2>Timestamp:</h2>
+                            <apex:outputText value="{!respEnvp.StringTimestamp}"/><br/>
+                        </apex:outputPanel>
+                    </apex:outputPanel>
+                </apex:pageBlockSection>
+            </apex:pageblock>
+        </apex:outputpanel>
+    </apex:form>
+</apex:page>

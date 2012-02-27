@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Review Item</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Review Items</value>
+    </caseValues>
+    <fields>
+        <label><!-- Code Review --></label>
+        <name>Code_Review__c</name>
+        <relationshipLabel><!-- Review Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Developer Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Line --></label>
+        <name>Line__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reviewer Comments --></label>
+        <name>Reviewer_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Deferred</masterLabel>
+            <translation><!-- Deferred --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fail</masterLabel>
+            <translation><!-- Fail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ignore</masterLabel>
+            <translation><!-- Ignore --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pass</masterLabel>
+            <translation><!-- Pass --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

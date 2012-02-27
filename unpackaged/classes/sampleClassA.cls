@@ -1,0 +1,4 @@
+global class sampleClassA{
+
+
+}

@@ -1,0 +1,36 @@
+<apex:component >
+	<apex:attribute name="jsondata" description="This is the chart data" type="string" required="true" />
+	<apex:attribute name="height" description="This is the chart height" type="integer" default="250" />
+	<apex:attribute name="width" description="This is the chart width" type="integer" default="500" />
+	<apex:attribute name="showSelectListComponent" description="false hides the list of visible entities." type="boolean" default="true"/>
+	<apex:attribute name="showSidePanel" description="false hides the right hand panel." type="boolean" default="true"/>
+	<apex:attribute name="showXMetricPicker" description="false hides the metric picker for x." type="boolean" default="true"/>
+	<apex:attribute name="showYMetricPicker" description="false hides the metric picker for y." type="boolean" default="true"/>
+	<apex:attribute name="showXScalePicker" description="false hides the scale picker for x." type="boolean" default="true"/>
+	<apex:attribute name="showYScalePicker" description="false hides the scale picker for y." type="boolean" default="true"/>			
+	<apex:attribute name="showAdvancedPanel" description="false disables the options compartment in the settings panel." type="boolean" default="true"/>	
+	<!-- Doc for this component is here: http://code.google.com/apis/visualization/documentation/gallery/motionchart.html -->
+	
+	<apex:outputPanel id="chart_div">
+		<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+		<script type="text/javascript">
+			google.load("visualization", "1", {packages: ["motionchart"]});
+			google.setOnLoadCallback(drawMotionChart); 
+			 
+			function drawMotionChart() {
+				var data = new google.visualization.DataTable( eval( '({!jsondata})' ) );
+			
+			  	var chart = new google.visualization.MotionChart(document.getElementById('{!$Component.chart_div}'));
+			  	chart.draw(data, {width: {!width}, height: {!height}, 
+			  		showSelectListComponent: {!showSelectListComponent},  
+			        showSidePanel: {!showSidePanel}, 
+			        showXMetricPicker : {!showXMetricPicker},
+				    showYMetricPicker : {!showYMetricPicker},
+			        showXScalePicker : {!showXScalePicker},
+			        showYScalePicker : {!showYScalePicker},
+			        showAdvancedPanel : {!showAdvancedPanel}
+			        });
+			 }
+		</script>
+	</apex:outputPanel>
+</apex:component>

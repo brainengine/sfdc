@@ -1,0 +1,52 @@
+<apex:component >
+	<apex:attribute name="jsondata" description="This is the chart data" type="string" required="true" />
+	<apex:attribute name="Title" description="The title of the Gauge." type="string"/>	
+	<apex:attribute name="height" description="This is the chart height" type="integer" default="120" />
+	<apex:attribute name="width" description="This is the chart width" type="integer" default="120" />
+	<apex:attribute name="min" description="The minimal value of a gauge." type="integer" default="0" />	
+	<apex:attribute name="max" description="The maximal value of a gauge." type="integer" default="100" />	
+	<apex:attribute name="redFrom" description="The lowest value for a range marked by a red color." type="integer" />	
+	<apex:attribute name="redTo" description="The highest value for a range marked by a red color." type="integer" />
+	<apex:attribute name="yellowFrom" description="The lowest value for a range marked by a yellow color." type="integer" />
+	<apex:attribute name="yellowTo" description="The highest value for a range marked by a yellow color." type="integer" />
+	<apex:attribute name="greenFrom" description="The lowest value for a range marked by a green color." type="integer" />	
+	<apex:attribute name="greenTo" description="The highest value for a range marked by a green color." type="integer" />	
+	<apex:attribute name="minorTicks" description="The number of minor tick section in each major tick section." type="integer" default="5" />	
+
+	<style type="text/css">
+		body { font-family: Arial, Helvetica, sans-serif; }
+	</style>
+
+	<table>
+		<tr>
+			<td align="center">
+				<small><b>{!Title}</b></small>
+			</td>
+		</tr>
+		<tr>
+			<td align="center">
+				<apex:outputPanel id="chart_div">
+					<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+					<script type="text/javascript">
+						 google.load("visualization", "1", {packages: ["gauge" ]});
+						 google.setOnLoadCallback(drawLineChart); 
+						 
+						 function drawLineChart() {
+						  var data = new google.visualization.DataTable( eval( '({!jsondata})' ) );
+						
+						  var chart = new google.visualization.Gauge( 
+						  		document.getElementById('{!$Component.chart_div}'));
+						  		chart.draw(data, {width: {!width}, height: {!height}, 
+								max: {!max}, min: {!min},
+						  		redFrom: {!redFrom}, redTo: {!redTo},
+			            		yellowFrom: {!yellowFrom}, yellowTo: {!yellowTo}, 
+			            		greenFrom: {!greenFrom}, greenTo: {!greenTo},
+								minorTicks: {!minorTicks}
+						  		});
+						 }
+					</script>
+				</apex:outputPanel>
+			</td>
+		</tr>
+	</table>
+</apex:component>

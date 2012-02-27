@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>BrainEngine User Story</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>BrainEngine User Stories</value>
+    </caseValues>
+    <fields>
+        <label><!-- Business Value --></label>
+        <name>Business_Value__c</name>
+        <picklistValues>
+            <masterLabel>Average</masterLabel>
+            <translation><!-- Average --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Good</masterLabel>
+            <translation><!-- Good --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Great</masterLabel>
+            <translation><!-- Great --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Must Vave</masterLabel>
+            <translation><!-- Must Vave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nice To Have</masterLabel>
+            <translation><!-- Nice To Have --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Developer --></label>
+        <name>Developer_1__c</name>
+        <relationshipLabel><!-- BrainEngine User Stories (Developer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Developer --></label>
+        <name>Developer_2__c</name>
+        <relationshipLabel><!-- BrainEngine User Stories (Developer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Effort --></label>
+        <name>Effort__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- BrainEngine User Stories --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- QA Engineer --></label>
+        <name>QA_Engineer__c</name>
+        <relationshipLabel><!-- BrainEngine User Stories (QA Engineer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>State__c</name>
+        <picklistValues>
+            <masterLabel>Backlog</masterLabel>
+            <translation><!-- Backlog --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Done</masterLabel>
+            <translation><!-- Done --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Testing</masterLabel>
+            <translation><!-- In Testing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Planned</masterLabel>
+            <translation><!-- Planned --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

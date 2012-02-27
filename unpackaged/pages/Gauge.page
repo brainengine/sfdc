@@ -1,0 +1,9 @@
+<apex:page standardcontroller="Opportunity" extensions="OpporunityExtension" showHeader="false">
+	<!-- This page is meant to be embedded in to the Opportunity Detail page. It requires an Opportunity Id parameter. -->
+	<c:Gauge jsondata="{!Amount}" 
+			 title="Opportunity Amount" 
+			 min="20000" max="30000" 
+			 redFrom="27500" redTo="30000" 
+			 yellowFrom="25000" yellowTo="27500" 
+			 greenFrom="20000" greenTo="25000"/> 
+</apex:page>

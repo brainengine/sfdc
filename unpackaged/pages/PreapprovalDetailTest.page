@@ -1,0 +1,169 @@
+<apex:page sidebar="false" controller="ControllerPreapprovalDetailApi">
+    <table align="center" ><tr>
+        <td style="font-size:18px"> 
+            <table><tr><td style="color:darkblue;">
+                PREAPPROVAL DETAIL TEST 
+            </td></tr></table>
+        </td>
+    </tr></table>
+    
+    <apex:form >
+        <apex:outputpanel style="width:300px;height:400px;" >
+            <div style="text-align:center;border-top:medium;border-top-color:black"> 
+                <apex:outputtext id="ErrMessageID" escape="false" value="{!MainMessage}" style="background-color:yellow;color:red;font-weight:18px;font-size:14px;text-align:center;"/>
+                
+            </div>
+            
+            <apex:pageblock title="Transaction">
+                <apex:pageBlockButtons >
+                    <apex:commandButton action="{!apply}" value="Apply" rerender="ErrMessageID,display,responerr" status="status"/>
+                    <apex:actionstatus id="status" >
+                        <apex:facet name="start" > <apex:outputtext style="color:blue" value=" Loading..."/></apex:facet>
+                        <apex:facet name="stop" > <apex:outputtext style="color:blue" value=" "/></apex:facet>
+                    </apex:actionstatus>
+                </apex:pageBlockButtons>
+                
+                
+             <apex:pageblocksection title="Common Request Parameters"  columns="2"  id="CommonPrmsId">
+                  <apex:pageblocksectionitem >
+   
+                  		<apex:OUTPUTTEXT style="background-color:red;color:red;">Common Parameters Object Name</apex:OUTPUTTEXT>
+                  		<apex:outputPanel >
+                          <apex:outputText style="background-color:red;color:red;" value="I"/>
+                        <apex:inputtext value="{!CommonParametersObjName}"/>
+                        </apex:outputPanel>
+                  </apex:pageblocksectionitem>
+
+                    <apex:pageblocksectionitem >
+
+                        <apex:OUTPUTTEXT style="background-color:red;color:red;">API Credential Object Name:</apex:OUTPUTTEXT>
+                        <apex:outputPanel >
+                          <apex:outputText style="background-color:red;color:red;" value="I"/>
+                        <apex:inputtext value="{!APICredentialObjName}"/>
+                        </apex:outputPanel>
+                    </apex:pageblocksectionitem>
+                        
+                </apex:pageblocksection>  
+             <!--SECTION--> 
+             
+             <apex:pageBlockSection title="PreapprovalRequest Details">
+                    <apex:pageblocksectionitem >
+                        <apex:outputText value="Preapproval Key:"/>
+                        <apex:outputPanel >
+                          <apex:outputText style="background-color:red;color:red;" value="I"/>
+                           <apex:inputText value="{!preapprovalKey}" />
+                        </apex:outputPanel>
+                 </apex:pageblocksectionitem> 
+                 
+             </apex:pageBlockSection>
+              
+          <apex:pageBlockSection title="RESPONSE" columns="4">
+               <apex:outputPanel id="display">
+                   <apex:outputPanel rendered="{!isDisplay}" >
+                   
+                   <h2>Approved:</h2>
+                   <apex:outputText value="{!preapprovalDetailResponse.Approved}"></apex:outputText><br/>
+                   
+                   <h2>Cancel Url:</h2>
+                   <apex:outputText value="{!preapprovalDetailResponse.CancelUrl}"></apex:outputText><br/>
+                   
+                   <h2>CurPayments:</h2>
+                   <apex:outputText value="{!preapprovalDetailResponse.CurPayments}"/><br/>
+                   
+                   <h2>CurPayments Amount:</h2>
+                   <apex:outputText value="{!preapprovalDetailResponse.CurPaymentsAmount}"/><br/>
+                   
+                   <h2>CurPeriod Attempts:</h2>
+                   <apex:outputText value="{!preapprovalDetailResponse.CurPeriodAttempts}"/><br/>
+                   
+                   <h2>CurPeriod Ending Date:</h2>
+                   <apex:outputText value="{!preapprovalDetailResponse.StringCurPeriodEndingDate}"/><br/>
+                   
+                   <h2>Currency Code:</h2>
+                   <apex:outputText value="{!preapprovalDetailResponse.CurrencyCode}"/><br/>
+                   
+                   <h2>Date Of Month:</h2>
+                   <apex:outputText value="{!preapprovalDetailResponse.DateOfMonth}"/><br/>
+                   
+                   <h2>Day Of Week:</h2>
+                   <apex:outputText value="{!preapprovalDetailResponse.DayOfWeek}"/><br/>
+                   
+                   <h2>Ending Date:</h2>
+                   <apex:outputText value="{!preapprovalDetailResponse.StringEndingDate}"/><br/>
+                   
+                   <h2>IpnNotification Url:</h2>
+                   <apex:outputText value="{!preapprovalDetailResponse.IpnNotificationUrl}"/><br/>
+                   
+                   <h2>Max Amount Per Payment:</h2>
+                   <apex:outputText value="{!preapprovalDetailResponse.MaxAmountPerPayment}"/><br/>
+                   
+                   <h2>Max Number Of Payments:</h2>
+                   <apex:outputText value="{!preapprovalDetailResponse.MaxNumberOfPayments}"/><br/>
+                   
+                   <h2>Max Number Of Payments Per Period:</h2>
+                   <apex:outputText value="{!preapprovalDetailResponse.MaxNumberOfPaymentsPerPeriod}"/><br/>
+                   
+                   <h2>Max Total Amount Of All Payments:</h2>
+                   <apex:outputText value="{!preapprovalDetailResponse.MaxTotalAmountOfAllPayments}"/><br/>
+                   
+                   <h2>Memo:</h2>
+                   <apex:outputText value="{!preapprovalDetailResponse.Memo}"/><br/>
+                   
+                   <h2>Payment Period:</h2>
+                   <apex:outputText value="{!preapprovalDetailResponse.PaymentPeriod}"/><br/>
+                   
+                   <h2>Pin Type:</h2>
+                   <apex:outputText value="{!preapprovalDetailResponse.PinType}"/><br/>
+                   
+                   <h2>Return Url:</h2>
+                   <apex:outputText value="{!preapprovalDetailResponse.ReturnUrl}"/><br/>
+                   
+                   <h2>Sender Email:</h2>
+                   <apex:outputText value="{!preapprovalDetailResponse.SenderEmail}"/><br/>
+                   
+                   <h2>Starting Date:</h2>
+                   <apex:outputText value="{!preapprovalDetailResponse.StringStartingDate}"/><br/>
+                   
+                   <h2>Status:</h2>
+                   <apex:outputText value="{!preapprovalDetailResponse.Status}"/><br/>
+                  
+                   <h2>Ack:</h2>
+                   <apex:outputText value="{!respEnvp.Ack}"></apex:outputText><br/>
+                       
+                   <h2>Correlation Id:</h2>
+                   <apex:outputText value="{!respEnvp.CorrelationId}"></apex:outputText><br/>
+                       
+                   <h2>Build:</h2>
+                   <apex:outputText value="{!respEnvp.Build}"></apex:outputText><br/>
+                       
+                   <h2>Timestamp:</h2>
+                   <apex:outputText value="{!respEnvp.StringTimestamp}"></apex:outputText><br/>
+                       
+                   </apex:outputPanel>
+               
+               </apex:outputPanel>
+                   
+             
+           </apex:pageBlockSection> 
+           
+           <apex:pageBlockSection title="Response Envelope">
+                   <apex:outputPanel id="responerr">
+                       <apex:outputPanel rendered="{! isErr }">
+                           <h2>Ack:</h2>
+                       <apex:outputText value="{!respEnvp.Ack}"></apex:outputText><br/>
+                       
+                        <h2>Correlation Id:</h2>
+                       <apex:outputText value="{!respEnvp.CorrelationId}"></apex:outputText><br/>
+                       
+                       <h2>Build:</h2>
+                       <apex:outputText value="{!respEnvp.Build}"></apex:outputText><br/>
+                       
+                       <h2>Timestamp:</h2>
+                       <apex:outputText value="{!respEnvp.StringTimestamp}"></apex:outputText><br/>
+                       </apex:outputPanel>
+                   </apex:outputPanel>
+               </apex:pageBlockSection>      
+           </apex:pageblock> 
+        </apex:outputpanel>
+    </apex:form>
+</apex:page>

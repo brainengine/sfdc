@@ -1,0 +1,22 @@
+<apex:component >
+	<apex:attribute name="jsondata" description="This is the chart data" type="string" required="true" />
+   	<apex:attribute name="title" description="The title of the chart." type="string" />
+		
+	<apex:outputPanel id="chart_div">
+		<!-- Including external CSS and JS files. -->
+		<link rel="stylesheet" type="text/css" href="http://visapi-gadgets.googlecode.com/svn/trunk/pilesofmoney/pom.css"/>
+    	<script type="text/javascript" src="http://visapi-gadgets.googlecode.com/svn/trunk/pilesofmoney/pom.js"></script>
+		
+		<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+		<script type="text/javascript">
+             google.load("visualization", "1");
+			 google.setOnLoadCallback(drawVisualization); 
+			 
+			 function drawVisualization() {
+			     var data = new google.visualization.DataTable( eval( '({!jsondata})' ) );
+			     var pileOfMoney = new PilesOfMoney( document.getElementById('{!$Component.chart_div}') );  
+		   	     pileOfMoney.draw(data, {title: '{!title}'});
+			 }
+		</script>
+	</apex:outputPanel>
+</apex:component>

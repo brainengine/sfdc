@@ -1,0 +1,67 @@
+<apex:page showHeader="true">
+	
+	<style>
+		#ctx { background:orange;width:200px;height:200px; }
+	</style>
+	
+	<style type="text/css">
+		/*margin and padding on body element
+		can introduce errors in determining
+		element position and are not recommended;
+		we turn them off as a foundation for YUI
+		CSS treatments. */
+		body {
+		margin:0;
+		padding:0;
+		}
+	</style>
+	 
+	<apex:styleSheet value="http://yui.yahooapis.com/2.9.0/build/fonts/fonts-min.css" />
+	<apex:styleSheet value="http://yui.yahooapis.com/2.9.0/build/container/assets/skins/sam/container.css" />
+	
+	<apex:includeScript value="http://yui.yahooapis.com/2.9.0/build/yahoo-dom-event/yahoo-dom-event.js"></apex:includeScript>
+	<apex:includeScript value="http://yui.yahooapis.com/2.9.0/build/container/container-min.js"></apex:includeScript>
+	
+	<apex:styleSheet value="{!URLFOR($Resource.tooltip, 'tooltip/style.css')}"/>
+	
+	<script>
+
+		
+	
+		
+	</script>
+	
+	
+
+		
+	<div style="text-align:center; width:640px; margin-left:auto; margin-right:auto;">
+		<apex:image id="Image-Maps_4201110101554142" value="{!$Resource.ggpMap}" usemap="#Image-Maps_4201110101554142" width="640" height="410" alt=""/>
+		<!--<img id="Image-Maps_4201110101554142" src="http://www.image-maps.com/uploaded_files/4201110101554142_OakbrookCenter.jpg" usemap="#Image-Maps_4201110101554142" border="0" width="640" height="410" alt="" />-->
+		<map id="_Image-Maps_4201110101554142" name="Image-Maps_4201110101554142">
+			<area shape="rect" coords="358,36,408,86" href="http://www.image-maps.com/" alt="Space - Sears" title="" onmouseover="tooltip.show('<strong>Space:</strong> 02567 </br><strong>Square Ft:</strong> 4000</br><strong>Lease Start:</strong> 01/01/2009</br><strong>Lease Ends:</strong> 01/01/2013');" onmouseout="tooltip.hide();"   />
+			<area shape="rect" coords="267,154,331,230" href="http://www.image-maps.com/" alt="Space - Misc" title="" onmouseover="tooltip.show('<strong>Space:</strong> 02499 </br><strong>Square Ft:</strong> 4000</br><strong>Lease Start:</strong> 05/01/2005</br><strong>Lease Ends:</strong> 05/01/2015');" onmouseout="tooltip.hide();"   />
+			<area shape="rect" coords="462,238,549,267" href="http://www.image-maps.com/" alt="Space - D" title="Space - D"    />
+			<area shape="rect" coords="548,237,616,266" href="http://www.image-maps.com/" alt="Space E" title="Space E"    />
+			<area shape="rect" coords="638,408,640,410" href="http://www.image-maps.com/index.php?aff=mapped_users_4201110101554142" alt="Image Map" title="Image Map" />
+		</map>
+		<!-- Image map text links - Start - If you do not wish to have text links under your image map, you can move or delete this DIV -->
+		<div style="text-align:center; font-size:12px; font-family:verdana; margin-left:auto; margin-right:auto; width:640px;">
+			<a style="text-decoration:none; color:black; font-size:12px; font-family:verdana;" href="http://www.image-maps.com/" title="Space - Sears">Space - Sears</a>
+			| 	<a style="text-decoration:none; color:black; font-size:12px; font-family:verdana;" href="http://www.image-maps.com/" title="Space - Misc">Space - Misc</a>
+			| 	<a style="text-decoration:none; color:black; font-size:12px; font-family:verdana;" href="http://www.image-maps.com/" title="Space - D">Space - D</a>
+			| 	<a style="text-decoration:none; color:black; font-size:12px; font-family:verdana;" href="http://www.image-maps.com/" title="Space E">Space E</a>
+			| 	<a style="text-decoration:none; color:black; font-size:12px; font-family:verdana;" href="http://www.image-maps.com/index.php?aff=mapped_users_4201110101554142" title="Image Map">Image Map</a>
+		</div>
+		<!-- Image map text links - End - -->
+
+	</div>
+	
+	
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	
+	<apex:includeScript value="{!URLFOR($Resource.tooltip, 'tooltip/script.js')}"/>
+
+</apex:page>

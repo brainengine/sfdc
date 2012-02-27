@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Bug Case</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Bug Cases</value>
+    </caseValues>
+    <fields>
+        <label><!-- Case --></label>
+        <name>Case__c</name>
+        <relationshipLabel><!-- Bug Cases --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Bug --></label>
+        <name>SFDC_Bug__c</name>
+        <relationshipLabel><!-- Bug Cases --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,8 @@
+<apex:page standardController="Account" extensions="AccountHierarchyController" showHeader="false">
+<html>
+<body>
+	<c:HierarchicalChart jsondata="{!AccountHierarchy}" initialSelection="{!SelectedAccount}"
+       					 size="medium" color="#edf7ff" selectionColor="#d6e9f8" />
+</body>
+</html>
+</apex:page>

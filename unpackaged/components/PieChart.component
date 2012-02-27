@@ -1,0 +1,53 @@
+<apex:component >
+	<apex:attribute name="jsondata" description="This is the chart data"
+		type="string" required="true" />
+
+	<apex:attribute name="title" description="This is the chart title"
+		type="string" required="true" />
+
+	<apex:attribute name="height" description="This is the chart height"
+		type="integer" default="250" />
+	<apex:attribute name="width" description="This is the chart width"
+		type="integer" default="500" />
+	<apex:attribute name="legend" description="Position and type of legend. Can be one of the following:
+'right' - To the right of the chart.
+'left' - To the left of the chart.
+'top' - Above the chart.
+'bottom' - Below the chart.
+'label' - Labels near slices.
+'none' - No legend is displayed."
+		type="string" default="right" />
+	<apex:attribute name="backgroundColor" description="set the background object"
+		type="string" default="{stroke:'none', strokeSize: 0}" />
+<!-- 
+details on this component are here 
+http://code.google.com/apis/visualization/documentation/gallery/piechart.html
+ -->
+	<apex:outputPanel id="chart_div">	
+		<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+		<script type="text/javascript">
+ google.load("visualization", "1", {packages: ["piechart" ]});
+ google.setOnLoadCallback(drawLineChart); 
+ 
+ function drawLineChart() {
+  var data = new google.visualization.DataTable( eval( '({!jsondata})' ) );
+  
+  var chart = new google.visualization.PieChart( 
+  		document.getElementById('{!$Component.chart_div}'));
+  chart.draw(data, {width: {!width}, height: {!height}, 
+  		legend: '{!legend}',  // should be passed in via attribute
+        smoothLine: true,  // should be passed in via attribute
+        title: '{!title}', 
+        is3D: true ,
+        backgroundColor: {!backgroundColor}
+        });
+   /*
+   google.visualization.events.addListener(table, 'select', function() {
+    var row = chart.getSelection()[0].row;
+   	// alert('You selected ' + data.getValue(row, 0));
+    window.location.href = '/'+data.getValue(row, 0);
+   });*/
+ }
+</script>
+	</apex:outputPanel>
+</apex:component>
