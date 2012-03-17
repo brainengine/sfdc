@@ -1,18 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Portal xmlns="http://soap.sforce.com/2006/04/metadata">
-    <active>true</active>
-    <admin>feedback@brainengine.net</admin>
-    <description>Customer Portal</description>
-    <emailSenderAddress>feedback@brainengine.net</emailSenderAddress>
-    <emailSenderName>feedback@brainengine.net</emailSenderName>
-    <enableSelfCloseCase>false</enableSelfCloseCase>
-    <forgotPassTemplate>unfiled$public/ChangePwdEmail</forgotPassTemplate>
-    <isSelfRegistrationActivated>true</isSelfRegistrationActivated>
-    <newPassTemplate>unfiled$public/ChangePwdEmail</newPassTemplate>
-    <newUserTemplate>unfiled$public/NewUserEmail</newUserTemplate>
-    <selfRegUserDefaultProfile>store portal user profile</selfRegUserDefaultProfile>
-    <selfRegUserDefaultRole>Worker</selfRegUserDefaultRole>
-    <selfRegUserTemplate>unfiled$public/SelfRegUserEmail</selfRegUserTemplate>
-    <showActionConfirmation>false</showActionConfirmation>
-    <type>CustomerSuccess</type>
-</Portal>
+%3c%3fxml+version%3d%221.0%22+encoding%3d%22UTF-8%22%3f%3e%0d%0a%3cPortal+xmlns%3d%22http%3a%2f%2fsoap.sforce.com%2f2006%2f04%2fmetadata%22%3e%0d%0a++++%3cactive%3etrue%3c%2factive%3e%0d%0a++++%3cadmin%3efeedback%40brainengine.net%3c%2fadmin%3e%0d%0a++++%3cdescription%3eCustomer+Portal%3c%2fdescription%3e%0d%0a++++%3cemailSenderAddress%3efeedback%40brainengine.net%3c%2femailSenderAddress%3e%0d%0a++++%3cemailSenderName%3efeedback%40brainengine.net%3c%2femailSenderName%3e%0d%0a++++%3cenableSelfCloseCase%3efalse%3c%2fenableSelfCloseCase%3e%0d%0a++++%3cforgotPassTemplate%3eunfiled%24public%2fChangePwdEmail%3c%2fforgotPassTemplate%3e%0d%0a++++%3cisSelfRegistrationActivated%3etrue%3c%2fisSelfRegistrationActivated%3e%0d%0a++++%3cnewPassTemplate%3eunfiled%24public%2fChangePwdEmail%3c%2fnewPassTemplate%3e%0d%0a++++%3cnewUserTemplate%3eunfiled%24public%2fNewUserEmail%3c%2fnewUserTemplate%3e%0d%0a++++%3cselfRegUserDefaultProfile%3estore+portal+user+profile%3c%2fselfRegUserDefaultProfile%3e%0d%0a++++%3cselfRegUserDefaultRole%3eWorker%3c%2fselfRegUserDefaultRole%3e%0d%0a++++%3cselfRegUserTemplate%3eunfiled%24public%2fSelfRegUserEmail%3c%2fselfRegUserTemplate%3e%0d%0a++++%3cshowActionConfirmation%3efalse%3c%2fshowActionConfirmation%3e%0d%0a++++%3ctype%3eCustomerSuccess%3c%2ftype%3e%0d%0a%3c%2fPortal%3e%0d%0a
