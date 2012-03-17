@@ -1,7 +1,7 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;CustomApplication xmlns=&quot;http://soap.sforce.com/2006/04/metadata&quot;&gt;
     &lt;defaultLandingTab&gt;Getting_Started&lt;/defaultLandingTab&gt;
-    &lt;description&gt;QQQQQQ - Milestones ePM - Project Planning and Task Management Application - Force.com Labs&lt;/description&gt;
+    &lt;description&gt;gggggggMilestones PM - Project Planning and Task Management Application - Force.com Labs&lt;/description&gt;
     &lt;label&gt;Milestones PM&lt;/label&gt;
     &lt;tab&gt;standard-Chatter&lt;/tab&gt;
     &lt;tab&gt;Getting_Started&lt;/tab&gt;
