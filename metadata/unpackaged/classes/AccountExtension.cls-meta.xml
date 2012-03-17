@@ -1,15 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ApexClass xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>24.0</apiVersion>
-    <packageVersions>
-        <majorNumber>1</majorNumber>
-        <minorNumber>23</minorNumber>
-        <namespace>EasyPage</namespace>
-    </packageVersions>
-    <packageVersions>
-        <majorNumber>1</majorNumber>
-        <minorNumber>1</minorNumber>
-        <namespace>eCatalog</namespace>
-    </packageVersions>
-    <status>Active</status>
-</ApexClass>
+%3c%3fxml+version%3d%221.0%22+encoding%3d%22UTF-bbbbbbbbbbbbbbbbbbbb%22%3f%3e%0d%0a%3cApexClass+xmlns%3d%22http%3a%2f%2fsoap.sforce.com%2f2006%2f04%2fmetadata%22%3e%0d%0a++++%3capiVersion%3e24.0%3c%2fapiVersion%3e%0d%0a++++%3cpackageVersions%3e%0d%0a++++++++%3cmajorNumber%3e1%3c%2fmajorNumber%3e%0d%0a++++++++%3cminorNumber%3e23%3c%2fminorNumber%3e%0d%0a++++++++%3cnamespace%3eEasyPage%3c%2fnamespace%3e%0d%0a++++%3c%2fpackageVersions%3e%0d%0a++++%3cpackageVersions%3e%0d%0a++++++++%3cmajorNumber%3e1%3c%2fmajorNumber%3e%0d%0a++++++++%3cminorNumber%3e1%3c%2fminorNumber%3e%0d%0a++++++++%3cnamespace%3eeCatalog%3c%2fnamespace%3e%0d%0a++++%3c%2fpackageVersions%3e%0d%0a++++%3cstatus%3eActive%3c%2fstatus%3e%0d%0a%3c%2fApexClass%3e%0d%0a
