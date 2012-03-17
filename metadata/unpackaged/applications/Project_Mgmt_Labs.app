@@ -1,27 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
-    <defaultLandingTab>Getting_Started</defaultLandingTab>
-    <description>Milestones PM - Project Planning and Task Management Application - Force.com Labs</description>
-    <label>Milestones PM</label>
-    <tab>standard-Chatter</tab>
-    <tab>Getting_Started</tab>
-    <tab>Summary</tab>
-    <tab>Milestone1_Project__c</tab>
-    <tab>Milestone1_Milestone__c</tab>
-    <tab>Milestone1_Task__c</tab>
-    <tab>Milestone1_Time__c</tab>
-    <tab>Milestone1_Expense__c</tab>
-    <tab>Milestone1_Log__c</tab>
-    <tab>Milestone_Calendar</tab>
-    <tab>Milestone1_Import_Project_Template</tab>
-    <tab>standard-report</tab>
-    <tab>standard-Dashboard</tab>
-    <tab>Master__c</tab>
-    <tab>BrainEngine</tab>
-    <tab>BrainEngine2</tab>
-    <tab>Legal_Documents__c</tab>
-    <tab>IDE</tab>
-    <tab>Editor</tab>
-    <tab>Code_Review__c</tab>
-    <tab>Review_Item__c</tab>
-</CustomApplication>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;CustomApplication xmlns=&quot;http://soap.sforce.com/2006/04/metadata&quot;&gt;
+    &lt;defaultLandingTab&gt;Getting_Started&lt;/defaultLandingTab&gt;
+    &lt;description&gt;QQQQQQ - Milestones ePM - Project Planning and Task Management Application - Force.com Labs&lt;/description&gt;
+    &lt;label&gt;Milestones PM&lt;/label&gt;
+    &lt;tab&gt;standard-Chatter&lt;/tab&gt;
+    &lt;tab&gt;Getting_Started&lt;/tab&gt;
+    &lt;tab&gt;Summary&lt;/tab&gt;
+    &lt;tab&gt;Milestone1_Project__c&lt;/tab&gt;
+    &lt;tab&gt;Milestone1_Milestone__c&lt;/tab&gt;
+    &lt;tab&gt;Milestone1_Task__c&lt;/tab&gt;
+    &lt;tab&gt;Milestone1_Time__c&lt;/tab&gt;
+    &lt;tab&gt;Milestone1_Expense__c&lt;/tab&gt;
+    &lt;tab&gt;Milestone1_Log__c&lt;/tab&gt;
+    &lt;tab&gt;Milestone_Calendar&lt;/tab&gt;
+    &lt;tab&gt;Milestone1_Import_Project_Template&lt;/tab&gt;
+    &lt;tab&gt;standard-report&lt;/tab&gt;
+    &lt;tab&gt;standard-Dashboard&lt;/tab&gt;
+    &lt;tab&gt;Master__c&lt;/tab&gt;
+    &lt;tab&gt;BrainEngine&lt;/tab&gt;
+    &lt;tab&gt;BrainEngine2&lt;/tab&gt;
+    &lt;tab&gt;Legal_Documents__c&lt;/tab&gt;
+    &lt;tab&gt;IDE&lt;/tab&gt;
+    &lt;tab&gt;Editor&lt;/tab&gt;
+    &lt;tab&gt;Code_Review__c&lt;/tab&gt;
+    &lt;tab&gt;Review_Item__c&lt;/tab&gt;
+&lt;/CustomApplication&gt;
