@@ -6,7 +6,7 @@
     &lt;tab&gt;standard-Chatter&lt;/tab&gt;
     &lt;tab&gt;Getting_Started&lt;/tab&gt;
     &lt;tab&gt;Summary&lt;/tab&gt;
-    &lt;tab&gt;Milestone1_Project__c&lt;/tab&gt;
+    &lt;tab&gt;Milestone1_Projecst__c&lt;/tab&gt;
     &lt;tab&gt;Milestone1_Milestone__c&lt;/tab&gt;
     &lt;tab&gt;Milestone1_Task__c&lt;/tab&gt;
     &lt;tab&gt;Milestone1_Time__c&lt;/tab&gt;
